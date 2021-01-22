@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 21:06:01 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/22 21:22:32 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/01/22 22:44:09 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,21 @@
 
 int	ft_atoi(const char *str)
 {
-	int is_neg;
-	int nb;
-	int is_pos;
-	char *ret;
+	int					is_neg;
+	unsigned int		nb;
 
 	nb = 0;
 	is_neg = 1;
-	is_pos = 1;
-	ret = (char *)str;
-	while (*ret == '\f' || *ret == '\n' || *ret == '\r' ||
-	*ret == '\t' || *ret == '\v' || *ret == ' ')
-		ret++;
-	while (*ret == '+' || *ret == '-')
-	{
-		if (is_neg != 1 || is_pos != 1)
-			return (nb);
-		if (*ret == '-')
+	while (*str == '\f' || *str == '\n' || *str == '\r' ||
+	*str == '\t' || *str == '\v' || *str == ' ')
+		str++;
+	if (*str == '+' || *str == '-')
+		if (*str++ == '-')
 			is_neg *= -1;
-		if (*ret == '+')
-			is_pos = 2;
-		ret++;
-	}
-	while (*ret <= '9' && *ret >= '0')
+	while (*str >= '0' && *str <= '9')
 	{
-		nb = (nb * 10) + (*ret - '0');
-		ret++;
+		nb = (nb * 10) + (*str - '0');
+		str++;
 	}
 	return (nb * is_neg);
 }
