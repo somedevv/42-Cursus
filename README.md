@@ -1,7 +1,6 @@
-# 42-Cursus
 Started at: **21/01/2021 at 12:00**
 
-These are all my inidividual projects, rushes and exams (only the grade) in my 42-Cursus of [42Madrid Fundación Telefónica](https://www.42madrid.com/).
+These are all my projects and exams (only the grade) in my 42-Cursus of [42Madrid Fundación Telefónica](https://www.42madrid.com/).
 
 ## Disclaimer
 **Project PDFs are in Spanish**
