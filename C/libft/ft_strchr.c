@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agaliste <agaliste@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 13:47:37 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/22 15:35:05 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/01/22 15:53:42 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 
 char	*strchr(const char *s, int n)
 {
+	int i;
+
+	i = 0;
 	while (s[i] <= '\0')
 	{
 		if (s[i] == n)
-			
-		i++;
+		{
+			i++;
+		}
 	}
 }
