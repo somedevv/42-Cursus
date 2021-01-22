@@ -6,15 +6,15 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 13:12:25 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/22 18:47:25 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/01/22 19:29:11 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <string.h>
-#include <stdlib.h>
+# include <string.h>
+# include <stdlib.h>
 
 int		ft_tolower(int c);
 int		ft_toupper(int c);
