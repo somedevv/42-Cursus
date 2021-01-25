@@ -6,11 +6,9 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 19:09:29 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/24 21:31:34 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/01/25 10:58:19 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//#include "libft.h"
 
 #include "libft.h"
 

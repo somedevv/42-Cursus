@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 20:58:38 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/24 21:05:23 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/01/25 10:42:30 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	size_t	i;
 
 	i = 0;
-	if (dst == NULL || src == NULL)
-		return (NULL);
-	while (i < len)
-	{
-		((char *)dst)[i] = ((const char *)src)[i];
-		i++;
-	}
+	if (dst < src)
+		return (ft_memcpy(dst, src, len));
+	if (dst > src)
+		return (ft_memcpy_bw(dst, src, len));
 	return (dst);
 }

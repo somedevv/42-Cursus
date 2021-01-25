@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 13:36:09 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/22 15:44:11 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/01/25 11:29:30 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while (n > 0)
+	while (n--)
 	{
 		if (*s1 != *s2)
 			return (*s1 - *s2);
@@ -22,7 +22,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 			return (0);
 		s1++;
 		s2++;
-		n--;
 	}
 	return (0);
 }

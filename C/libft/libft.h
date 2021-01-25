@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 13:12:25 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/24 21:30:17 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/01/25 10:40:56 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,21 @@
 # include <string.h>
 # include <stdlib.h>
 
+/*
+** Libc Functions
+*/
+
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-int		ft_isacii(int c);
+int		ft_isascii(int c);
 int		ft_isalnum(int c);
 int		ft_isprint(int c);
 void	ft_bzero(void *sr, size_t n);
 char	*ft_strchr(const char *s, int n);
 char	*ft_strrchr(const char *s, int n);
 int		ft_isalnum(int c);
+int		ft_isdigit(int c);
 int		ft_isalpha(int c);
-int		ft_str_is_numeric(int c);
 char	*ft_strdup(const char *s1);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, char *src, size_t dstsize);
@@ -39,5 +43,13 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ft_calloc(size_t count, size_t size);
+
+/*
+** Helper Functions
+*/
+
+void	*ft_memcpy_bw(void *dst, const void *src, size_t n);
 
 #endif

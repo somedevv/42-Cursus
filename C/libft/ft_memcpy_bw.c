@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy_bw.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/22 10:10:11 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/25 11:48:43 by agaliste         ###   ########.fr       */
+/*   Created: 2021/01/25 10:36:34 by agaliste          #+#    #+#             */
+/*   Updated: 2021/01/25 10:40:51 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	*ft_memcpy_bw(void *dst, const void *src, size_t n)
 {
-	if (c >= 'a' && c <= 'z')
-		c -= 32;
-	return (c);
+	char	*c1;
+	char	*c2;
+
+	c1 = (char *)dst;
+	c2 = (char *)src;
+	if (n == 0 || dst == src)
+		return (dst);
+	while (n--)
+	{
+		c1[n] = c2[n];
+	}
+	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 18:20:28 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/22 18:42:36 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/01/25 11:42:21 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	while (str[i] != '\0')
 	{
 		j = 0;
-		while (str[i + j] != '\0' && str[i + j] == to_find[j] && j < len)
+		while (str[i + j] != '\0' && str[i + j] == to_find[j] && (j + i) < len)
 		{
 			if (to_find[j + 1] == '\0')
 				return (&str[i]);
