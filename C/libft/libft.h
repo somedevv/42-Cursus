@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 13:12:25 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/25 16:05:24 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/01/25 17:37:46 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,13 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+char	*ft_itoa(int n);
 
 /*
 ** Helper Functions
 */
 
 void	*ft_memcpy_bw(void *dst, const void *src, size_t n);
+int		ft_intlen(long nb);
 
 #endif
