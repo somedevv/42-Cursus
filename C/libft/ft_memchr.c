@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 21:06:15 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/25 11:20:26 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/01/25 13:29:55 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		if (*src == '\0')
 			return (NULL);
 		src++;
+		i++;
 	}
-	return (src);
+	if (i == n)
+		return (NULL);
+	else
+		return (src);
 }
