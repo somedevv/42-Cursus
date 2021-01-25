@@ -6,11 +6,11 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 10:36:34 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/25 10:40:51 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/01/25 16:30:39 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 void	*ft_memcpy_bw(void *dst, const void *src, size_t n)
 {
