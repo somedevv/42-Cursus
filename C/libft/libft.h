@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 13:12:25 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/26 08:45:16 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/01/26 10:32:23 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 void	*ft_memcpy_bw(void *dst, const void *src, size_t n);
 int		ft_intlen(long nb);
-void	*ft_memcpy_extra(void *dst, const void *src, size_t n, unsigned int index);
 
 #endif
