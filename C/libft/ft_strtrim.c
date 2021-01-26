@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 19:37:22 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/26 19:49:31 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/01/26 19:51:01 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t		len;
 	char		*str;
-	
+
 	if (!s1 || !set)
 		return (NULL);
 	while (*s1 && ft_strchr(set, *s1))
