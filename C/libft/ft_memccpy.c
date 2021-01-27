@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 19:09:29 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/25 14:04:11 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/01/27 17:36:39 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (dst == NULL || src == NULL)
+	if (!dst || !src)
 		return (NULL);
 	while (i < n)
 	{
