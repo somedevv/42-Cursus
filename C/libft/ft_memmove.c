@@ -6,13 +6,29 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 20:58:38 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/25 10:42:30 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/01/28 17:05:06 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+static void	*ft_memcpy_bw(void *dst, const void *src, size_t n)
+{
+	char	*c1;
+	char	*c2;
+
+	c1 = (char *)dst;
+	c2 = (char *)src;
+	if (n == 0 || dst == src)
+		return (dst);
+	while (n--)
+	{
+		c1[n] = c2[n];
+	}
+	return (dst);
+}
+
+void		*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
 

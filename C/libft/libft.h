@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 13:12:25 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/27 19:45:34 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/01/28 17:51:55 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,15 +63,15 @@ char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			*ft_itoa(int n);
 char			**ft_split(char const *s, char c);
+
 /*
-** Helper Functions
+** Bonus Functions
 */
 
-void			*ft_memcpy_bw(void *dst, const void *src, size_t n);
-int				ft_intlen(long nb);
-char			**ft_malloc_error(char **tab);
-unsigned int	ft_get_nb_strs(char const *s, char c);
-void			ft_get_next_str(char **next_str, unsigned int *next_str_len,
-					char c);
+typedef struct s_list
+{
+void *content;
+struct s_list *next;
+} t_list;
 
 #endif

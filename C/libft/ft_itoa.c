@@ -6,13 +6,23 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 17:28:19 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/27 18:14:22 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/01/28 17:05:50 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+static int	ft_intlen(long nb)
+{
+	unsigned int len;
+
+	len = nb < 0 ? 2 : 1;
+	while (nb /= 10)
+		len++;
+	return (len);
+}
+
+char		*ft_itoa(int n)
 {
 	char	*str;
 	int		size;
