@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 07:55:57 by agaliste          #+#    #+#             */
-/*   Updated: 2021/02/01 09:03:21 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/02/01 16:45:38 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		return ;
 	while (lst)
 	{
-		f(lst);
+		f(lst->content);
 		lst = lst->next;
 	}
 }
