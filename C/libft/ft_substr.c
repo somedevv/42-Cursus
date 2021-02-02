@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 20:32:27 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/26 15:15:34 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/02/02 20:53:13 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	j;
 
-	str = malloc(sizeof(*s) * (len + 1));
 	i = 0;
 	j = 0;
-	if (!str)
+	if (!s)
+		return (NULL);
+	if (!(str = malloc(sizeof(*s) * (len + 1))))
 		return (NULL);
 	while (s[i])
 	{
 		if (i >= start && j < len)
-		{
-			str[j] = s[i];
-			j++;
-		}
+			str[j++] = s[i];
 		i++;
 	}
 	str[j] = 0;

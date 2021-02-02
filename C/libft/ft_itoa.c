@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 17:28:19 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/28 17:05:50 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/02/02 20:59:17 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,9 @@ char		*ft_itoa(int n)
 	char	*str;
 	int		size;
 	int		nb;
-
+	
 	size = ft_intlen(n);
-	str = (char *)malloc(sizeof(char) * size + 1);
-	if (!str)
+	if (!(str = (char *)malloc(sizeof(char) * size + 1)))
 		return (NULL);
 	nb = n;
 	str[size] = '\0';

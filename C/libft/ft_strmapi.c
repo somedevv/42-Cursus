@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 19:43:14 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/27 17:38:02 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/02/02 20:44:35 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*str;
 	int		i;
 
-	str = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	i = 0;
 	if (!s || !f)
 		return (NULL);
-	if (!str)
+	if (!(str = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1))))
 		return (NULL);
 	while (s[i])
 	{
