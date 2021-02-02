@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 09:05:18 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/25 18:16:38 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/02/02 18:56:37 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	int		*obj;
 
-	obj = (void*)malloc(sizeof(size) * count);
-	if (!obj)
+	if (!(obj = malloc(size * count)))
 		return (NULL);
-	ft_bzero(obj, count);
+	ft_bzero(obj, count * size);
 	return (obj);
 }
