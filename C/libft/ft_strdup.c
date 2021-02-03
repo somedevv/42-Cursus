@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 13:52:15 by agaliste          #+#    #+#             */
-/*   Updated: 2021/02/02 20:56:37 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/02/03 17:32:28 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,10 @@
 
 char	*ft_strdup(const char *s1)
 {
-	int		i;
-	int		len;
-	char	*dest;
+	char	*str;
 
-	len = 0;
-	i = 0;
-	if (!(dest = (char *)malloc(sizeof(char) * (len + 1))))
+	if (!(str = (char *)malloc(ft_strlen(s1) + 1)))
 		return (0);
-	while (s1[len] != '\0')
-		len++;
-	while (i < len)
-	{
-		dest[i] = s1[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	ft_memcpy(str, s1, ft_strlen(s1) + 1);
+	return (str);
 }
