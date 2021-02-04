@@ -7,7 +7,11 @@
 |    Authorized libft    | Doesn't apply |
 | Description | Write your own library, containing a excerpt of the functions you will need more forward during your training. |
 
-[SPANISH SUBJECT HERE](https://github.com/somedevv/42-Cursus/blob/master/C/libft/es.subject.pdf)
+==>[SPANISH SUBJECT HERE](https://github.com/somedevv/42-Cursus/blob/master/C/libft/es.subject.pdf)
+
+==>[HEADER](https://github.com/somedevv/42-Cursus/blob/master/C/libft/libft.h)
+
+==>[MAKEFILE](https://github.com/somedevv/42-Cursus/blob/master/C/libft/Makefile)
 
 ### 1. Technical considerations
 * The use of global variables is prohibited.
