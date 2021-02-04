@@ -138,8 +138,8 @@ list is even more useful.
 You will use the following structure to represent the nodes in your list. You will need to add
 this structure to your **libft.h** file.
 <code>make bonus</code> will add the bonus functions to the **libft.a** library.
-You don't have to add **_bonus** at the end of the **.c** and **.h** files for this part just add
-**_bonus** to additional files that you would have created just for bonuses.
+You don't have to add "**_bonus**" at the end of the **.c** and **.h** files for this part just add
+"**_bonus**" to additional files that you would have created just for bonuses.
 ```C
 typedef struct    s_list
 {
