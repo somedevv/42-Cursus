@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 09:03:47 by agaliste          #+#    #+#             */
-/*   Updated: 2021/02/04 10:05:32 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/02/04 10:07:03 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 # include <stdlib.h>
 
 /*
-** Main Functions
+** Main
 */
 
 int		get_next_line(int fd, char **line);
 
 /*
-** Bonus Functions
+** Utils
 */
 
 size_t	ft_strlen(const char *str);
