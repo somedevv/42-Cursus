@@ -129,7 +129,7 @@ they can be interesting to facilitate the writing of the functions of the first 
 |    Authorized functions    | write |
 | Description | Write the integer 'n' over the descriptor of file provided. |
 
-### Extra part
+### 4. Extra Part - Extra Functions
 
 If you have managed to do the required part perfectly, this section proposes some tips to go further. It's a bit like when you buy a DLC for a video game.
 Have raw memory and string manipulation functions available
