@@ -51,7 +51,7 @@ found in the libc or that they are in a different form. Some of these functions
 they can be interesting to facilitate the writing of the functions of the first part.
 |    Function name    |              [ft_substr](https://github.com/somedevv/42-Cursus/blob/master/C/libft/ft_substr.c)                   |
 |--------|----------------------------------------------|
-|   Prototipe     |     char *ft_substr(char const *s, unsigned int start,size_t len); |
+|   Prototype     |     char *ft_substr(char const *s, unsigned int start,size_t len); |
 |    Parameters    |   #1. The string from which the new string is extracted. #2. The index of the beginning of the new string #3. The maximum size of the new string.           |
 |    Return value    | The new character string. NULL if the memory reserve.    |
 |    Authorized functions    |  malloc             |
@@ -59,7 +59,7 @@ they can be interesting to facilitate the writing of the functions of the first 
 
 |    Function name    |              [ft_strjoin](https://github.com/somedevv/42-Cursus/blob/master/C/libft/ft_strjoin.c)         |
 |--------|----------------------------------------------|
-|   Prototipe     |   char *ft_strjoin(char const *s1, char const *s2);   |
+|   Prototype     |   char *ft_strjoin(char const *s1, char const *s2);   |
 |    Parameters    |   #1. The prefix string. #2. The suffix string. |
 |    Return value    |  The new character string. NULL if the memory reserve. |
 |    Authorized functions    | malloc |
@@ -67,7 +67,7 @@ they can be interesting to facilitate the writing of the functions of the first 
 
 |    Function name    |              [ft_strtrim](https://github.com/somedevv/42-Cursus/blob/master/C/libft/ft_strtrim.c)         |
 |--------|----------------------------------------------|
-|   Prototipe     |  char *ft_strtrim(char const *s1, char const *set);  |
+|   Prototype     |  char *ft_strtrim(char const *s1, char const *set);  |
 |    Parameters    |  #1. The character string to debug. #2. The character reference set to be remove.  |
 |    Return value    |  The debugged character string. NULL if the memory reserve. |
 |    Authorized functions    | malloc |
@@ -75,7 +75,7 @@ they can be interesting to facilitate the writing of the functions of the first 
 
 |    Function name    |              [ft_split](https://github.com/somedevv/42-Cursus/blob/master/C/libft/ft_split.c)           |
 |--------|----------------------------------------------|
-|   Prototipe     |  char **ft_split(char const *s, char c);  |
+|   Prototype     |  char **ft_split(char const *s, char c);  |
 |    Parameters    | #1. The character string to chop up. #2. The delimiting character. |
 |    Return value    | The table with the new character strings that result from the chopping. NULL if reservation fails memory |
 |    Authorized functions    | malloc, free |
@@ -83,7 +83,7 @@ they can be interesting to facilitate the writing of the functions of the first 
 
 |    Function name    |              [ft_itoa](https://github.com/somedevv/42-Cursus/blob/master/C/libft/ft_itoa.c)           |
 |--------|----------------------------------------------|
-|   Prototipe     |  char *ft_itoa(int n);  |
+|   Prototype     |  char *ft_itoa(int n);  |
 |    Parameters    | #1. The integer to convert. |
 |    Return value    | The character string representing the integer. NULL if the memory reservation fails. |
 |    Authorized functions    | malloc |
@@ -91,7 +91,7 @@ they can be interesting to facilitate the writing of the functions of the first 
 
 |    Function name    |              [ft_strmapi](https://github.com/somedevv/42-Cursus/blob/master/C/libft/ft_strmapi.c)           |
 |--------|----------------------------------------------|
-|   Prototipe     |  char *ft_strmapi(char const *s, char (*f)(unsigned int, char));  |
+|   Prototype     |  char *ft_strmapi(char const *s, char (*f)(unsigned int, char));  |
 |    Parameters    | #1. The character string to iterate over #2. The function to apply to each character. |
 |    Return value    | The character string resulting from the successive applications of 'f'. Returns NULL if assignment fails. |
 |    Authorized functions    | malloc |
@@ -99,7 +99,7 @@ they can be interesting to facilitate the writing of the functions of the first 
 
 |    Function name    |              [ft_putchar_fd](https://github.com/somedevv/42-Cursus/blob/master/C/libft/ft_putchar_fd.c)           |
 |--------|----------------------------------------------|
-|   Prototipe     | void ft_putchar_fd(char c, int fd); |
+|   Prototype     | void ft_putchar_fd(char c, int fd); |
 |    Parameters    | #1. The character to write #2. The file descriptor on which to write. |
 |    Return value    | None |
 |    Authorized functions    | write |
@@ -107,7 +107,7 @@ they can be interesting to facilitate the writing of the functions of the first 
 
 |    Function name    |              [ft_putstr_fd](https://github.com/somedevv/42-Cursus/blob/master/C/libft/ft_putstr_fd.c)           |
 |--------|----------------------------------------------|
-|   Prototipe     |  void ft_putstr_fd(char *s, int fd);  |
+|   Prototype     |  void ft_putstr_fd(char *s, int fd);  |
 |    Parameters    | #1. The character string to write #2. The file descriptor on which to write. |
 |    Return value    | None |
 |    Authorized functions    | write |
@@ -115,7 +115,7 @@ they can be interesting to facilitate the writing of the functions of the first 
 
 |    Function name    |              [ft_putendl_fd](https://github.com/somedevv/42-Cursus/blob/master/C/libft/ft_putendl_fd.c)           |
 |--------|----------------------------------------------|
-|   Prototipe     |  void ft_putendl_fd(char *s, int fd);  |
+|   Prototype     |  void ft_putendl_fd(char *s, int fd);  |
 |    Parameters    | #1. The character string to write #2. The file descriptor on which to write. |
 |    Return value    | None |
 |    Authorized functions    | write |
@@ -123,7 +123,7 @@ they can be interesting to facilitate the writing of the functions of the first 
 
 |    Function name    |              [ft_putnbr_fd](https://github.com/somedevv/42-Cursus/blob/master/C/libft/ft_putnbr_fd.c)           |
 |--------|----------------------------------------------|
-|   Prototipe     |  void ft_putnbr_fd(int n, int fd);  |
+|   Prototype     |  void ft_putnbr_fd(int n, int fd);  |
 |    Parameters    | #1. The integer to write #2. The descriptor file on which to write. |
 |    Return value    | None |
 |    Authorized functions    | write |
@@ -157,7 +157,7 @@ The following functions will allow you to manipulate your lists with ease:
 
 |    Function name    |              [ft_lstnew](https://github.com/somedevv/42-Cursus/blob/master/C/libft/ft_lstnew.c)           |
 |--------|----------------------------------------------|
-|   Prototipe     |  t_list *ft_lstnew(void *content);  |
+|   Prototype     |  t_list *ft_lstnew(void *content);  |
 |    Parameters    | #1. The content of the new element. |
 |    Return value    | The new element |
 |    Authorized functions    | malloc |
@@ -165,7 +165,7 @@ The following functions will allow you to manipulate your lists with ease:
 
 |    Function name    |              [ft_lstadd_front](https://github.com/somedevv/42-Cursus/blob/master/C/libft/ft_lstadd_front.c)           |
 |--------|----------------------------------------------|
-|   Prototipe     |  void ft_lstadd_front(t_list **alst, t_list *new);  |
+|   Prototype     |  void ft_lstadd_front(t_list **alst, t_list *new);  |
 |    Parameters    | #1. The direction of the pointer to the first element of the list. #2. The direction of the pointer to the element there to add to the list. |
 |    Return value    | None |
 |    Authorized functions    | None |
@@ -173,7 +173,7 @@ The following functions will allow you to manipulate your lists with ease:
 
 |    Function name    |              [ft_lstsize](https://github.com/somedevv/42-Cursus/blob/master/C/libft/ft_lstsize.c)           |
 |--------|----------------------------------------------|
-|   Prototipe     |  int ft_lstsize(t_list *lst);  |
+|   Prototype     |  int ft_lstsize(t_list *lst);  |
 |    Parameters    | #1. Top of the list. |
 |    Return value    | List size |
 |    Authorized functions    | None |
@@ -181,7 +181,7 @@ The following functions will allow you to manipulate your lists with ease:
 
 |    Function name    |              [ft_lstlast](https://github.com/somedevv/42-Cursus/blob/master/C/libft/ft_lstlast.c)           |
 |--------|----------------------------------------------|
-|   Prototipe     |  t_list *ft_lstlast(t_list *lst);  |
+|   Prototype     |  t_list *ft_lstlast(t_list *lst);  |
 |    Parameters    | #1. Top of the list. |
 |    Return value    | Last element in the list |
 |    Authorized functions    | None |
@@ -189,7 +189,7 @@ The following functions will allow you to manipulate your lists with ease:
 
 |    Function name    |              [ft_lstadd_back](https://github.com/somedevv/42-Cursus/blob/master/C/libft/ft_lstadd_back.c)           |
 |--------|----------------------------------------------|
-|   Prototipe     |  void ft_lstadd_back(t_list **lst, t_list *new);  |
+|   Prototype     |  void ft_lstadd_back(t_list **lst, t_list *new);  |
 |    Parameters    | #1. The direction of the pointer to the first element of the list. #2. The direction of the pointer to the element there to add to the list. |
 |    Return value    | None |
 |    Authorized functions    | None |
@@ -197,7 +197,7 @@ The following functions will allow you to manipulate your lists with ease:
 
 |    Function name    |              [ft_lstdelone](https://github.com/somedevv/42-Cursus/blob/master/C/libft/ft_lstdelone.c)           |
 |--------|----------------------------------------------|
-|   Prototipe     |  void ft_lstdelone(t_list *lst, void (*del)(void*)); |
+|   Prototype     |  void ft_lstdelone(t_list *lst, void (*del)(void*)); |
 |    Parameters    | #1. The item whose memory should be freed #2. The address of a function used to clear the content of the element. |
 |    Return value    | None |
 |    Authorized functions    | free |
@@ -205,7 +205,7 @@ The following functions will allow you to manipulate your lists with ease:
 
 |    Function name    |              [ft_lstclear](https://github.com/somedevv/42-Cursus/blob/master/C/libft/ft_lstclear.c)           |
 |--------|----------------------------------------------|
-|   Prototipe     |  void ft_lstclear(t_list **lst, void (*del)(void *);  |
+|   Prototype     |  void ft_lstclear(t_list **lst, void (*del)(void *);  |
 |    Parameters    | #1. The direction of the pointer to an element. #2. The address of the function to suppress the content of an element. |
 |    Return value    | None |
 |    Authorized functions    | free |
@@ -213,7 +213,7 @@ The following functions will allow you to manipulate your lists with ease:
 
 |    Function name    |              [ft_lstiter](https://github.com/somedevv/42-Cursus/blob/master/C/libft/ft_lstiter.c)           |
 |--------|----------------------------------------------|
-|   Prototipe     |  void ft_lstiter(t_list *lst, void (*f)(void *)); |
+|   Prototype     |  void ft_lstiter(t_list *lst, void (*f)(void *)); |
 |    Parameters    | #1. The address of the pointer to an element. #2. The address of the function to apply. |
 |    Return value    | None |
 |    Authorized functions    | None |
@@ -221,7 +221,7 @@ The following functions will allow you to manipulate your lists with ease:
 
 |    Function name    |              [ft_lstmap](https://github.com/somedevv/42-Cursus/blob/master/C/libft/ft_lstmap.c)           |
 |--------|----------------------------------------------|
-|   Prototipe     |  t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));  |
+|   Prototype     |  t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));  |
 |    Parameters    | #1. The direction of the pointer to an element. #2. The address of the function to apply on the list. #3. The address of the function to apply on an element to delete ’content’, if it is necessary. |
 |    Return value    | The new list. NULL if memory allocation fails. |
 |    Authorized functions    | malloc |
