@@ -6,12 +6,8 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 09:03:22 by agaliste          #+#    #+#             */
-/*   Updated: 2021/02/04 09:55:33 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/02/05 18:58:30 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-int	get_next_line(int fd, char **line)
-{
-}

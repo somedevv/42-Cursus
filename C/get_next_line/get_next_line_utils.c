@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 09:09:13 by agaliste          #+#    #+#             */
-/*   Updated: 2021/02/04 09:45:09 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/02/05 19:00:32 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,33 +22,13 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-	char *d;
-	char *s;
-
-	d = (char *)dst;
-	s = (char *)src;
-	if (dst == src)
-		return (dst);
-	if (s < d)
-	{
-		while (len--)
-			*(d + len) = *(s + len);
-		return (dst);
-	}
-	while (len--)
-		*d++ = *s++;
-	return (dst);
-}
-
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char			*str;
 	unsigned int	i;
 	unsigned int	j;
 
-	if (!s1 || !s2)
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
 	if (!(str = malloc((sizeof(char) * ft_strlen(s1) + ft_strlen(s2)) + 1)))
 		return (NULL);
@@ -63,19 +43,60 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	return (str);
 }
 
-int		check_return(char *str)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int i;
+	char	*str;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	if (str)
+	j = 0;
+	if (!s)
+		return (NULL);
+	if (!(str = malloc(sizeof(*s) * (len + 1))))
+		return (NULL);
+	while (s[i])
 	{
-		while (str[i])
+		if (i >= start && j < len)
+			str[j++] = s[i];
+		i++;
+	}
+	str[j] = 0;
+	return (str);
+}
+
+char	*ft_strdup(const char *s1)
+{
+	char			*s2;
+	size_t			l;
+	unsigned int	i;
+
+	l = ft_strlen(s1);
+	s2 = (char *)malloc(l + 1);
+	i = 0;
+	if (s2)
+	{
+		while (s1[i] != '\0' && i < l)
 		{
-			if (str[i] == '\n')
-				return (1);
+			s2[i] = s1[i];
 			i++;
 		}
+		s2[i] = '\0';
 	}
-	return (0);
+	else
+		return (0);
+	return (s2);
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s != '\0')
+	{
+		if (c == *s)
+			return ((char *)s);
+		s++;
+	}
+	if (c == '\0' && *s == '\0')
+		return ((char *)s);
+	return (NULL);
 }
