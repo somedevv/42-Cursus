@@ -6,12 +6,13 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 09:03:47 by agaliste          #+#    #+#             */
-/*   Updated: 2021/02/05 19:00:47 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/02/23 18:46:33 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+# define BUFFER_SIZE 5
 
 # include <stdlib.h>
 # include <string.h>
@@ -21,7 +22,11 @@
 ** GNL
 */
 
-int			get_next_line(int fd, char **line);
+/*
+** int			get_next_line(int fd, char **line);
+*/
+
+int			get_next_line(int fd);
 
 /*
 ** Utils
