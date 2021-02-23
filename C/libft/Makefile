@@ -63,12 +63,12 @@ $(NAME): ${OBJS}
 bonus: ${BONUS_OBJS} ${OBJS}
 		ar rcs ${NAME} ${BONUS_OBJS} ${OBJS}
 
-all:	${NAME} ${BONUS} 
-
 clean:
 		${RM} ${OBJS} ${BONUS_OBJS}
 
 fclean:	clean
-		${RM} ${NAME} 
+		${RM} ${NAME}
+
+all: ${NAME} ${OBJS} ${BONUS_OBJS}
 
 re:		fclean all
