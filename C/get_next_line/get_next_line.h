@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 09:03:47 by agaliste          #+#    #+#             */
-/*   Updated: 2021/02/23 18:46:33 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/02/25 17:33:48 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,9 @@
 ** GNL
 */
 
-/*
-** int			get_next_line(int fd, char **line);
-*/
 
-int			get_next_line(int fd);
+ int			get_next_line(int fd, char **line);
+
 
 /*
 ** Utils

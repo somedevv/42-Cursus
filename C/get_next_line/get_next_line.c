@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 09:03:22 by agaliste          #+#    #+#             */
-/*   Updated: 2021/02/23 19:13:33 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/02/25 18:28:17 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,22 @@
 #include <stdio.h>
 #include <fcntl.h>
 
-int get_next_line(int fd) {
+int get_next_line(int fd, char **line) {
 	static char *buff;
-	int			rd;
-	while ((rd = read(fd, &buff, BUFFER_SIZE)) == BUFFER_SIZE){
-		printf("%s", &buff);
-		if (rd == 0 || rd == -1)
-			break ;
-	}
-	close(fd);
-	return 0;
+
+	buff = malloc(sizeof(char*));
+	if (!(buff = malloc(sizeof(char*))))
+		return (-1);
+	if (strlen(&buff) < 1)
+		if (read(fd, &buff,BUFFER_SIZE) < 0)
+			return (-1);	
+		else
+			
 }
 
 int	main() {
 	int fd = open("./test.txt", O_RDONLY);
-	get_next_line(fd);
+	char **line;
+	get_next_line(fd, &line);
 	return 0;
 }
