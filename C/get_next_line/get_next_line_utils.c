@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 09:09:13 by agaliste          #+#    #+#             */
-/*   Updated: 2021/02/05 19:00:32 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/03/08 19:07:17 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[j] = 0;
 	return (str);
 }
-
+/*
 char	*ft_strdup(const char *s1)
 {
 	char			*s2;
@@ -87,7 +87,7 @@ char	*ft_strdup(const char *s1)
 		return (0);
 	return (s2);
 }
-
+*/
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s != '\0')
@@ -99,4 +99,16 @@ char	*ft_strchr(const char *s, int c)
 	if (c == '\0' && *s == '\0')
 		return ((char *)s);
 	return (NULL);
+}
+
+void	ft_bzero(void *s, size_t n)
+{
+	size_t i;
+
+	i = 0;
+	while (i < n)
+	{
+		((char *)s)[i] = 0;
+		i++;
+	}
 }
