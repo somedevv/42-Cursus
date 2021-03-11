@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 12:23:18 by agaliste          #+#    #+#             */
-/*   Updated: 2021/02/02 20:46:35 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/03/11 13:40:39 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int i;
-	int len;
+	int	i;
+	int	len;
 
 	i = 0;
 	if (!s || !fd)

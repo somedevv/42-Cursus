@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 11:55:07 by agaliste          #+#    #+#             */
-/*   Updated: 2021/02/03 13:20:44 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/03/11 13:47:46 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	if (!(str = malloc((sizeof(char) * ft_strlen(s1) + ft_strlen(s2)) + 1)))
+	str = malloc((sizeof(char) * ft_strlen(s1) + ft_strlen(s2)) + 1);
+	if (str == NULL)
 		return (NULL);
 	i = 0;
 	j = 0;

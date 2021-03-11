@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 13:47:37 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/22 17:33:32 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/03/11 13:46:38 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strchr(const char *s, int n)
 {
-	char *ret;
+	char	*ret;
 
-	ret = (char*)s;
+	ret = (char *)s;
 	while (*ret != n)
 	{
 		if (*ret == '\0')

@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 21:06:15 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/25 13:29:55 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/03/11 13:57:38 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	char	*src;
 
 	i = 0;
-	src = (char*)s;
+	src = (char *)s;
 	while (*src != c && i < n)
 	{
 		if (*src == '\0')

@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 13:36:09 by agaliste          #+#    #+#             */
-/*   Updated: 2021/02/01 20:32:31 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/03/11 13:57:57 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (i < n && s1[i] != '\0' && s2[i] != '\0')

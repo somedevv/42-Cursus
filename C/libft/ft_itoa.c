@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 17:28:19 by agaliste          #+#    #+#             */
-/*   Updated: 2021/02/02 21:03:43 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/03/11 14:07:00 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_intlen(long nb)
 {
-	unsigned int len;
+	unsigned int	len;
 
 	len = nb < 0 ? 2 : 1;
 	while (nb /= 10)
@@ -22,14 +22,15 @@ static int	ft_intlen(long nb)
 	return (len);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*str;
 	int		size;
 	int		nb;
 
 	size = ft_intlen(n);
-	if (!(str = (char *)malloc(sizeof(char) * size + 1)))
+	str = (char *)malloc(sizeof(char) * size + 1);
+	if (str == NULL)
 		return (NULL);
 	nb = n;
 	str[size] = '\0';

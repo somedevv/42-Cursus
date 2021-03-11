@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 19:09:29 by agaliste          #+#    #+#             */
-/*   Updated: 2021/02/01 20:17:13 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/03/11 13:51:57 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	while (i < n)
 	{
 		((char *)dst)[i] = ((const char *)src)[i];
-		if (((const unsigned char*)src)[i] == (unsigned char)c)
+		if (((const unsigned char *)src)[i] == (unsigned char)c)
 			return (&dst[++i]);
 		i++;
 	}

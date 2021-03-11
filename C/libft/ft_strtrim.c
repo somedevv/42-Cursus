@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 19:37:22 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/26 19:51:01 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/03/11 13:58:53 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	len = ft_strlen(s1);
 	while (len && ft_strchr(set, s1[len]))
 		len--;
-	str = ft_substr((char*)s1, 0, len + 1);
+	str = ft_substr((char *)s1, 0, len + 1);
 	return (str);
 }

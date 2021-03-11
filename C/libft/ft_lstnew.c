@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 18:45:17 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/29 21:48:00 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/03/11 13:41:40 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *nownode;
+	t_list	*nownode;
 
-	if (!(nownode = malloc(sizeof(t_list))))
+	nownode = malloc(sizeof(t_list));
+	if (nownode == NULL)
 		return (NULL);
 	nownode->content = content;
 	nownode->next = NULL;

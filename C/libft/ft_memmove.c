@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 20:58:38 by agaliste          #+#    #+#             */
-/*   Updated: 2021/01/28 17:05:06 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/03/11 13:59:24 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	*ft_memcpy_bw(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-void		*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
 
