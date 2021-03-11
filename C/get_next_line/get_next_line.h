@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 09:03:47 by agaliste          #+#    #+#             */
-/*   Updated: 2021/03/08 19:07:39 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/03/11 13:22:40 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@
 ** GNL
 */
 
-
- int			get_next_line(int fd, char **line);
-
+int			get_next_line(int fd, char **line);
 
 /*
 ** Utils
@@ -35,7 +33,6 @@ char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
 /*char		*ft_strdup(const char *s1);*/
 void		ft_bzero(void *s, size_t n);
-char        *ft_strchr(const char *s, int c);
-
+char		*ft_strchr(const char *s, int c);
 
 #endif
