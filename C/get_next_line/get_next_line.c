@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 09:03:22 by agaliste          #+#    #+#             */
-/*   Updated: 2021/03/15 17:17:17 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/03/15 18:12:36 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 char	*cpy_str(char *pos, char **line, int rd)
 {
-	int		i;
-	char	*help;
+	size_t		i;
+	char		*help;
 
 	i = 0;
 	while (pos[i])
