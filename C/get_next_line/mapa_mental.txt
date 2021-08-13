@@ -1,0 +1,20 @@
+
+hola
+adios
+que tal
+
+Leo en pos: ho
+No \n
+-> line = line + pos (ho)
+-> pos = \0 (pos vacio)
+
+Leo en pos: la
+No \n
+-> line = line + pos = (hola)
+->pos vacio
+
+Leo en pos: \ns
+Hay \n
+-> line = line + lo que hay en pos hasta \n = hola
+-> pos es lo que hay despues del salto de línea = a
+
