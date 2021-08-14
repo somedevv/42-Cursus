@@ -1,9 +1,11 @@
-NAME = libft.a
+NAME = libftprintf.a
 
 SRCS =	printf.c \
-		libft/ft_putchar_fd.c \
-		libft/ft_putstr_fd.c \
-		libft/ft_putnbr_fd.c \
+		libft/ft_putchar.c \
+		libft/ft_putstr.c \
+		libft/ft_putnbr.c \
+		libft/ft_putnbr_un.c \
+		libft/ft_putnbr_base.c \
 		
 
 OBJS = ${SRCS:.c=.o}
