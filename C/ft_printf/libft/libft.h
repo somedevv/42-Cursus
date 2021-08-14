@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/04 09:03:47 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/14 01:48:57 by agaliste         ###   ########.fr       */
+/*   Created: 2021/01/22 13:12:25 by agaliste          #+#    #+#             */
+/*   Updated: 2021/08/14 04:59:01 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUFFER_SIZE 2
+#ifndef LIBFT_H
+# define LIBFT_H
 
-# include <stdlib.h>
 # include <string.h>
+# include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
-/*
-** GNL
-*/
-
-char		*get_next_line(int fd);
-
-/*
-** Utils
-*/
-
-size_t		ft_strlen(const char *s);
-char		*ft_substr(char const *s, unsigned int start, size_t len);
-char		*ft_strjoin(char const *s1, char const *s2);
-char		*ft_strdup(const char *s1);
-void		ft_bzero(void *s, size_t n);
-char		*ft_strchr(const char *s, int c);
+int	ft_putchar(char c);
+int	ft_putstr(char *s);
+int	ft_putnbr(int n);
+int	ft_putnbr_base(int nbr, char *base);
+int	ft_putnbr_un(unsigned int n);
 
 #endif

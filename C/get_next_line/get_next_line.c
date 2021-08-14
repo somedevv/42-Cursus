@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/04 09:03:22 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/14 00:08:39 by agaliste         ###   ########.fr       */
+/*   Created: 2021/08/13 23:37:11 by agaliste          #+#    #+#             */
+/*   Updated: 2021/08/14 02:26:31 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,19 @@
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned int	i;
+	char			*dstn;
+	const char		*srcn;
 
 	i = 0;
-	if (!dst && !src)
+	dstn = dst;
+	srcn = src;
+	if (!dstn && !srcn)
 		return (NULL);
-	if (src > dst)
+	if (srcn > dstn)
 	{
 		while (i < len)
 		{
-			dst[i] = src[i];
+			dstn[i] = srcn[i];
 			i++;
 		}
 	}
@@ -33,53 +37,71 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		i = len;
 		while (i-- > 0)
-			dst[i] = src[i];
+			dstn[i] = srcn[i];
 	}
-	return (dst);
+	return (dstn);
 }
 
-char		*check_str(char *buff, char **pos)
+int	check_buffer(char *pos, char **line)
 {
-	char	*help;
 	char	*aux;
+	char	*otro;
 
-	aux = ft_strchr(*pos, '\n');
+	aux = ft_strchr(pos, '\n');
 	if (aux)
 	{
-		*aux = '/0';
-		help = ft_strdup(*pos);
-		ft_memmove(*pos, aux + 1, ft_strlen(aux + 1))
-		return(help);
+		*aux = '\0';
+		otro = *line;
+		*line = ft_strjoin(otro, pos);
+		free(otro);
+		ft_memmove(pos, aux + 1, ft_strlen(aux));
+		return (1);
 	}
 	else
-		help = ft_strjoin(*pos, buff);
+	{
+		otro = *line;
+		*line = ft_strjoin(otro, pos);
+		free(otro);
+		pos[0] = '\0';
+		return (0);
+	}
 }
 
 char	*get_next_line(int fd)
 {
-	char		*buff;
-	static char	*pos[256];
+	char		*line;
+	static char	pos[256][BUFFER_SIZE + 1];
 	int			rd;
-	
-	buff = malloc(sizeof(char) * BUFFER_SIZE + 1);
-	if (BUFFER_SIZE <= 0 | !fd | !buff)
-		return(NULL);
-	
-	if (check_str (buff, &pos[fd]))
-		return ();
-	rd = read(fd, buff, BUFFER_SIZE);
+
+	if (!fd || BUFFER_SIZE <= 0)
+		return (NULL);
+	line = ft_strdup("");
+	if (check_buffer(pos[fd], &line))
+		return (line);
+	rd = read(fd, pos[fd], BUFFER_SIZE);
 	while (rd)
 	{
-		if (rd == -1)
-		{
-			free(buff);
-			return(NULL);
-		}
-		buff[rd] = '\0';
-		if (check_str(buff, &pos[fd]))
-			break;
-		rd = read(fd, buff, BUFFER_SIZE);
+		if (check_buffer(pos[fd], &line))
+			return (line);
+		rd = read(fd, pos[fd], BUFFER_SIZE);
 	}
-	free(buff);
-	return();
+	return (NULL);
+}
+
+int	main(void)
+{
+	char	*linea;
+	int		fd;
+
+	fd = open("/Users/agaliste/42-Cursus/C/get_next_line/test.txt", O_RDONLY);
+	linea = get_next_line(fd);
+	printf("Linea 1: %s\n", linea);
+	linea = get_next_line(fd);
+	printf("Linea 2: %s\n", linea);
+	linea = get_next_line(fd);
+	printf("Linea 3: %s\n", linea);
+	close(fd);
+	system("leaks a.out");
+	pause();
+	return (0);
 }

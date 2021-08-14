@@ -1,4 +1,3 @@
 hola
 si
-kabcd
 esto es una prueba
