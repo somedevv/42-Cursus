@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 23:37:11 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/15 18:35:45 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/08/15 19:32:14 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,7 @@ int	check_buffer(char *pos, char **line)
 {
 	char	*aux;
 	char	*otro;
-	int		i;
 
-	i = 0;
 	aux = ft_strchr(pos, '\n');
 	if (aux)
 	{
@@ -105,6 +103,8 @@ int	main(void)
 	linea = get_next_line(fd);
 	printf("Linea 3: %s\n", linea);
 	free(linea);
+	system("leaks a.out");
+	pause();
 	close(fd);
 	return (0);
 }
