@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line2.c                                   :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 23:37:11 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/14 02:26:31 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/08/15 18:35:45 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,9 @@ int	check_buffer(char *pos, char **line)
 {
 	char	*aux;
 	char	*otro;
+	int		i;
 
+	i = 0;
 	aux = ft_strchr(pos, '\n');
 	if (aux)
 	{
@@ -54,7 +56,7 @@ int	check_buffer(char *pos, char **line)
 		otro = *line;
 		*line = ft_strjoin(otro, pos);
 		free(otro);
-		ft_memmove(pos, aux + 1, ft_strlen(aux));
+		ft_memmove(pos, aux + 1, ft_strlen(aux + 1));
 		return (1);
 	}
 	else
@@ -96,12 +98,13 @@ int	main(void)
 	fd = open("/Users/agaliste/42-Cursus/C/get_next_line/test.txt", O_RDONLY);
 	linea = get_next_line(fd);
 	printf("Linea 1: %s\n", linea);
+	free(linea);
 	linea = get_next_line(fd);
 	printf("Linea 2: %s\n", linea);
+	free(linea);
 	linea = get_next_line(fd);
 	printf("Linea 3: %s\n", linea);
+	free(linea);
 	close(fd);
-	system("leaks a.out");
-	pause();
 	return (0);
 }
