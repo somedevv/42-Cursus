@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 23:37:11 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/15 19:32:14 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/08/21 21:32:07 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,19 @@
 #include <stdio.h>
 #include <fcntl.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned int	i;
-	char			*dstn;
-	const char		*srcn;
+	size_t	i;
 
 	i = 0;
-	dstn = dst;
-	srcn = src;
-	if (!dstn && !srcn)
+	if (!dst && !src)
 		return (NULL);
-	if (srcn > dstn)
+	while (i < n)
 	{
-		while (i < len)
-		{
-			dstn[i] = srcn[i];
-			i++;
-		}
+		((char *)dst)[i] = ((const char *)src)[i];
+		i++;
 	}
-	else
-	{
-		i = len;
-		while (i-- > 0)
-			dstn[i] = srcn[i];
-	}
-	return (dstn);
+	return (dst);
 }
 
 int	check_buffer(char *pos, char **line)
@@ -54,7 +41,7 @@ int	check_buffer(char *pos, char **line)
 		otro = *line;
 		*line = ft_strjoin(otro, pos);
 		free(otro);
-		ft_memmove(pos, aux + 1, ft_strlen(aux + 1));
+		ft_memcpy(pos, aux + 1, ft_strlen(aux + 1));
 		return (1);
 	}
 	else
@@ -93,7 +80,7 @@ int	main(void)
 	char	*linea;
 	int		fd;
 
-	fd = open("/Users/agaliste/42-Cursus/C/get_next_line/test.txt", O_RDONLY);
+	fd = open("test.txt", O_RDONLY);
 	linea = get_next_line(fd);
 	printf("Linea 1: %s\n", linea);
 	free(linea);
@@ -103,8 +90,8 @@ int	main(void)
 	linea = get_next_line(fd);
 	printf("Linea 3: %s\n", linea);
 	free(linea);
-	system("leaks a.out");
-	pause();
+	// system("leaks a.out");
+	// pause();
 	close(fd);
 	return (0);
 }
