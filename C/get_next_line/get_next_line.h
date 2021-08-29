@@ -6,13 +6,13 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 09:03:47 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/29 04:40:09 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/08/29 05:01:05 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFFER_SIZE 1
+# define BUFFER_SIZE 42
 
 # include <stdlib.h>
 # include <unistd.h>

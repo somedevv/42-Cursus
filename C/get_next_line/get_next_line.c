@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 23:37:11 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/29 04:35:50 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/08/29 05:16:23 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,26 +21,25 @@ int	check_buffer(char *pos, char **line, int fd)
 	char	aux2[256][BUFFER_SIZE + 1];
 
 	aux = ft_strchr(pos, '\n');
+	otro = *line;
 	if (aux)
 	{
 		*aux = '\0';
-		otro = *line;
 		*line = ft_strjoin(otro, pos);
 		free(otro);
 		ft_memcpy(aux2[fd], aux + 1, ft_strlen(aux + 1));
 		ft_bzero(pos, BUFFER_SIZE + 1);
 		ft_memcpy(pos, aux2[fd], ft_strlen(aux2[fd]));
 		ft_bzero(aux2[fd], BUFFER_SIZE + 1);
+		otro = *line;
+		*line = ft_strjoin(otro, "\n");
+		free(otro);
 		return (1);
 	}
-	else
-	{
-		otro = *line;
-		*line = ft_strjoin(otro, pos);
-		free(otro);
-		ft_bzero(pos, BUFFER_SIZE + 1);
-		return (0);
-	}
+	*line = ft_strjoin(otro, pos);
+	free(otro);
+	ft_bzero(pos, BUFFER_SIZE + 1);
+	return (0);
 }
 
 char	*get_next_line(int fd)
@@ -60,10 +59,10 @@ char	*get_next_line(int fd)
 	rd = read(fd, pos[fd], BUFFER_SIZE);
 	while (rd)
 	{
+		i++;
 		if (check_buffer(pos[fd], &line, fd))
 			return (line);
 		rd = read(fd, pos[fd], BUFFER_SIZE);
-		i++;
 	}
 	if (line && i > 0)
 		return (line);
@@ -76,7 +75,7 @@ int	main(void)
 	char	*linea;
 	int		fd;
 
-	fd = open("test.txt", O_RDONLY);
+	fd = open("43_with_nl", O_RDONLY);
 	linea = get_next_line(fd);
 	printf("Linea 1: %s\n", linea);
 	free(linea);
