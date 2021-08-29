@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 09:09:13 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/14 02:03:50 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/08/29 01:55:22 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,4 +104,31 @@ char	*ft_strchr(const char *s, int n)
 		ret++;
 	}
 	return (ret);
+}
+
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		((char *)s)[i] = 0;
+		i++;
+	}
+}
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	if (!dst && !src)
+		return (NULL);
+	while (i < n)
+	{
+		((char *)dst)[i] = ((const char *)src)[i];
+		i++;
+	}
+	return (dst);
 }

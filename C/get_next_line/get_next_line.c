@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 23:37:11 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/21 21:32:07 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/08/29 04:24:48 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,28 @@
 #include <stdio.h>
 #include <fcntl.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	if (!dst && !src)
-		return (NULL);
-	while (i < n)
-	{
-		((char *)dst)[i] = ((const char *)src)[i];
-		i++;
-	}
-	return (dst);
-}
-
-int	check_buffer(char *pos, char **line)
+int	check_buffer(char *pos, char **line, int fd)
 {
 	char	*aux;
 	char	*otro;
+	char aux2[256][BUFFER_SIZE + 1];
 
 	aux = ft_strchr(pos, '\n');
-	if (aux)
-	{
+	if (aux) {
 		*aux = '\0';
 		otro = *line;
 		*line = ft_strjoin(otro, pos);
 		free(otro);
-		ft_memcpy(pos, aux + 1, ft_strlen(aux + 1));
+		ft_memcpy(aux2[fd], aux + 1, ft_strlen(aux + 1));
+		ft_bzero(pos, BUFFER_SIZE + 1);
+		ft_memcpy(pos, aux2[fd], ft_strlen(aux2[fd]));
+		ft_bzero(aux2[fd], BUFFER_SIZE + 1);
 		return (1);
-	}
-	else
-	{
+	} else {
 		otro = *line;
 		*line = ft_strjoin(otro, pos);
 		free(otro);
-		pos[0] = '\0';
+		ft_bzero(pos, BUFFER_SIZE + 1);
 		return (0);
 	}
 }
@@ -59,20 +45,32 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	pos[256][BUFFER_SIZE + 1];
 	int			rd;
+	int i;
 
-	if (!fd || BUFFER_SIZE <= 0)
+	i = 0;
+	line = malloc(sizeof(char) * BUFFER_SIZE + 1);
+	if (fd < 0 || fd > 256 || BUFFER_SIZE <= 0) {
+		free(line);
 		return (NULL);
-	line = ft_strdup("");
-	if (check_buffer(pos[fd], &line))
+	}
+	if (!line)
+		return (NULL);
+	ft_bzero(line, BUFFER_SIZE + 1);
+	if (check_buffer(pos[fd], &line, fd))
 		return (line);
 	rd = read(fd, pos[fd], BUFFER_SIZE);
-	while (rd)
-	{
-		if (check_buffer(pos[fd], &line))
+	while (rd) {
+		if (check_buffer(pos[fd], &line, fd))
 			return (line);
 		rd = read(fd, pos[fd], BUFFER_SIZE);
+		i++;
 	}
-	return (NULL);
+	if (line && i > 0)
+		return (line);
+	else {
+		free(line);
+		return (NULL);
+	}
 }
 
 int	main(void)
@@ -91,7 +89,6 @@ int	main(void)
 	printf("Linea 3: %s\n", linea);
 	free(linea);
 	// system("leaks a.out");
-	// pause();
 	close(fd);
 	return (0);
 }
