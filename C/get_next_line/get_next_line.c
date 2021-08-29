@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 23:37:11 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/29 05:16:23 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/08/29 16:14:47 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,16 +75,13 @@ int	main(void)
 	char	*linea;
 	int		fd;
 
-	fd = open("43_with_nl", O_RDONLY);
-	linea = get_next_line(fd);
-	printf("Linea 1: %s\n", linea);
-	free(linea);
-	linea = get_next_line(fd);
-	printf("Linea 2: %s\n", linea);
-	free(linea);
-	linea = get_next_line(fd);
-	printf("Linea 3: %s\n", linea);
-	free(linea);
+	fd = open("test.txt", O_RDONLY);
+	for (int i = 0; i < 6; i++)
+	{
+		linea = get_next_line(fd);
+		printf("Linea %d: %s\n", i, linea);
+		free(linea);
+	}
 	// system("leaks a.out");
 	close(fd);
 	return (0);
