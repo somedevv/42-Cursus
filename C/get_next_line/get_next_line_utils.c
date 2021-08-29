@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 09:09:13 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/29 01:55:22 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/08/29 04:29:39 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,52 +42,6 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		str[j++] = s2[i++];
 	str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
 	return (str);
-}
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*str;
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	if (!s)
-		return (NULL);
-	str = malloc(sizeof(*s) * (len + 1));
-	if (str == NULL)
-		return (NULL);
-	while (s[i])
-	{
-		if (i >= start && j < len)
-			str[j++] = s[i];
-		i++;
-	}
-	str[j] = 0;
-	return (str);
-}
-
-char	*ft_strdup(const char *s1)
-{
-	char			*s2;
-	size_t			l;
-	unsigned int	i;
-
-	l = ft_strlen(s1);
-	s2 = (char *)malloc(l + 1);
-	i = 0;
-	if (s2)
-	{
-		while (s1[i] != '\0' && i < l)
-		{
-			s2[i] = s1[i];
-			i++;
-		}
-		s2[i] = '\0';
-	}
-	else
-		return (0);
-	return (s2);
 }
 
 char	*ft_strchr(const char *s, int n)

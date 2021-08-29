@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 23:37:11 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/29 04:24:48 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/08/29 04:35:50 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@ int	check_buffer(char *pos, char **line, int fd)
 {
 	char	*aux;
 	char	*otro;
-	char aux2[256][BUFFER_SIZE + 1];
+	char	aux2[256][BUFFER_SIZE + 1];
 
 	aux = ft_strchr(pos, '\n');
-	if (aux) {
+	if (aux)
+	{
 		*aux = '\0';
 		otro = *line;
 		*line = ft_strjoin(otro, pos);
@@ -31,7 +32,9 @@ int	check_buffer(char *pos, char **line, int fd)
 		ft_memcpy(pos, aux2[fd], ft_strlen(aux2[fd]));
 		ft_bzero(aux2[fd], BUFFER_SIZE + 1);
 		return (1);
-	} else {
+	}
+	else
+	{
 		otro = *line;
 		*line = ft_strjoin(otro, pos);
 		free(otro);
@@ -45,21 +48,18 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	pos[256][BUFFER_SIZE + 1];
 	int			rd;
-	int i;
+	int			i;
 
 	i = 0;
 	line = malloc(sizeof(char) * BUFFER_SIZE + 1);
-	if (fd < 0 || fd > 256 || BUFFER_SIZE <= 0) {
-		free(line);
-		return (NULL);
-	}
-	if (!line)
+	if (fd < 0 || fd > 256 || BUFFER_SIZE <= 0 || !line)
 		return (NULL);
 	ft_bzero(line, BUFFER_SIZE + 1);
 	if (check_buffer(pos[fd], &line, fd))
 		return (line);
 	rd = read(fd, pos[fd], BUFFER_SIZE);
-	while (rd) {
+	while (rd)
+	{
 		if (check_buffer(pos[fd], &line, fd))
 			return (line);
 		rd = read(fd, pos[fd], BUFFER_SIZE);
@@ -67,10 +67,8 @@ char	*get_next_line(int fd)
 	}
 	if (line && i > 0)
 		return (line);
-	else {
-		free(line);
-		return (NULL);
-	}
+	free(line);
+	return (NULL);
 }
 
 int	main(void)
