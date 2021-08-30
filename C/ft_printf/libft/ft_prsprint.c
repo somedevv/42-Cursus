@@ -6,13 +6,13 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 02:37:48 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/30 03:40:27 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/08/30 04:45:22 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int checkparam(const char *inp, int i, int cont, va_list (ap))
+int	checkparam(const char *inp, int i, int cont, va_list (ap))
 {
 	if (inp[i + 1] == '%')
 		cont += write(1, "%", 1);
@@ -33,7 +33,7 @@ int checkparam(const char *inp, int i, int cont, va_list (ap))
 	return (cont);
 }
 
-int ft_prsprint(int i, int cont, const char *inp, va_list ap)
+int	ft_prsprint(int i, int cont, const char *inp, va_list ap)
 {
 	if (!inp)
 		return (0);

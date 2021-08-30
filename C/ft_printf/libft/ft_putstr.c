@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 12:23:18 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/30 03:29:46 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/08/30 04:46:04 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_putstr(char *s)
 
 	i = 0;
 	if (!s)
-		return(write(1, "(null)", 6));
+		return (write(1, "(null)", 6));
 	len = ft_strlen(s);
 	while (i < len)
 	{
