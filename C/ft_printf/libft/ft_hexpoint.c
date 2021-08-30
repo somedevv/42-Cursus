@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_hexpoint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/25 12:23:18 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/30 03:29:46 by agaliste         ###   ########.fr       */
+/*   Created: 2021/08/30 02:03:58 by agaliste          #+#    #+#             */
+/*   Updated: 2021/08/30 03:40:35 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putstr(char *s)
+int ft_hexpoint(unsigned long pnt)
 {
-	int	i;
-	int	len;
+	int cont;
 
-	i = 0;
-	if (!s)
-		return(write(1, "(null)", 6));
-	len = ft_strlen(s);
-	while (i < len)
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
-	return (i);
+	cont = 0;
+	cont += write(1, "0x", 2); 
+	if (pnt != 0)
+		cont += ft_putlngnbr_base(pnt, "0123456789abcdef");
+	else
+		cont += write(1, "0", 1);
+	return (cont);
 }

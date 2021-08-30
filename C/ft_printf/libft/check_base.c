@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_un.c                                     :+:      :+:    :+:   */
+/*   check_base.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/25 12:39:38 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/14 04:57:33 by agaliste         ###   ########.fr       */
+/*   Created: 2021/08/30 03:36:35 by agaliste          #+#    #+#             */
+/*   Updated: 2021/08/30 03:37:00 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putnbr_un(unsigned int n)
+int	check_base(char *base)
 {
-	unsigned int	cont;
+	int	i;
+	int	z;
 
-	cont = 0;
-	if (n >= 0 || n <= 2147483647)
+	i = 0;
+	z = 0;
+	if (base[0] == '\0' || base[1] == '\0')
+		return (0);
+	while (base[i])
 	{
-		if (n >= 10)
+		z = i + 1;
+		if (base[i] == '+' || base[i] == '-')
+			return (0);
+		if (base[i] < 32 || base[i] > 126)
+			return (0);
+		while (base[z])
 		{
-			cont += ft_putnbr(n / 10);
-			cont += ft_putnbr(n % 10);
+			if (base[i] == base[z])
+				return (0);
+			z++;
 		}
-		else
-			cont += ft_putchar(n + '0');
+		i++;
 	}
-	return (cont);
+	return (1);
 }

@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/25 12:23:18 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/30 03:29:46 by agaliste         ###   ########.fr       */
+/*   Created: 2021/08/30 02:11:03 by agaliste          #+#    #+#             */
+/*   Updated: 2021/08/30 03:06:51 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
-int	ft_putstr(char *s)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
-	int	len;
+	size_t	i;
 
 	i = 0;
-	if (!s)
-		return(write(1, "(null)", 6));
-	len = ft_strlen(s);
-	while (i < len)
-	{
-		ft_putchar(s[i]);
+	while (str[i] != '\0')
 		i++;
-	}
 	return (i);
 }

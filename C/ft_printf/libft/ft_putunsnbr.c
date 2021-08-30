@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_un.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/25 12:23:18 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/30 03:29:46 by agaliste         ###   ########.fr       */
+/*   Created: 2021/01/25 12:39:38 by agaliste          #+#    #+#             */
+/*   Updated: 2021/08/30 03:37:55 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putstr(char *s)
+int	ft_putunsnbr(unsigned int n)
 {
-	int	i;
-	int	len;
+	unsigned int	cont;
 
-	i = 0;
-	if (!s)
-		return(write(1, "(null)", 6));
-	len = ft_strlen(s);
-	while (i < len)
+	cont = 0;
+	if (n >= 0 || n <= 2147483647)
 	{
-		ft_putchar(s[i]);
-		i++;
+		if (n >= 10)
+		{
+			cont += ft_putnbr(n / 10);
+			cont += ft_putnbr(n % 10);
+		}
+		else
+			cont += ft_putchar(n + '0');
 	}
-	return (i);
+	return (cont);
 }
