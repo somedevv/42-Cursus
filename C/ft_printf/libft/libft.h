@@ -6,17 +6,14 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 13:12:25 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/30 04:46:35 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/09/02 21:14:22 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <string.h>
-# include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 # include <stdarg.h>
 
 int		ft_putchar(char c);
