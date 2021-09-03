@@ -6,19 +6,17 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 23:37:11 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/30 00:10:14 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/09/03 02:01:13 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
-#include <fcntl.h>
 
 int	check_buffer(char *pos, char **line)
 {
 	char	*aux;
 	char	*otro;
-	char	aux2[BUFFER_SIZE + 1];
+	static char	aux2[BUFFER_SIZE + 1];
 
 	aux = ft_strchr(pos, '\n');
 	otro = *line;
@@ -45,21 +43,23 @@ int	check_buffer(char *pos, char **line)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	pos[256][BUFFER_SIZE + 1];
+	static char	pos[BUFFER_SIZE + 1];
 	int			rd;
-
+	int			i;
+	i = 0;
 	line = malloc(sizeof(char) * BUFFER_SIZE + 1);
 	if (fd < 0 || fd > 256 || BUFFER_SIZE <= 0 || !line)
 		return (NULL);
 	ft_bzero(line, BUFFER_SIZE + 1);
-	if (check_buffer(pos[fd], &line))
+	if (check_buffer(pos, &line))
 		return (line);
-	rd = read(fd, pos[fd], BUFFER_SIZE);
+	rd = read(fd, pos, BUFFER_SIZE);
 	while (rd)
 	{
-		if (check_buffer(pos[fd], &line))
+		i++;
+		if (check_buffer(pos, &line))
 			return (line);
-		rd = read(fd, pos[fd], BUFFER_SIZE);
+		rd = read(fd, pos, BUFFER_SIZE);
 	}
 	if (line[0] == '\0')
 	{
@@ -67,21 +67,4 @@ char	*get_next_line(int fd)
 		return (NULL);
 	}
 	return (line);
-}
-
-int	main(void)
-{
-	char	*linea;
-	int		fd;
-
-	fd = open("test", O_RDONLY);
-	for (int i = 1; i <= 2; i++)
-	{
-		linea = get_next_line(fd);
-		printf("Linea %d: %s\n", i, linea);
-		free(linea);
-	}
-	// system("leaks a.out");
-	close(fd);
-	return (0);
 }
