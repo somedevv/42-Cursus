@@ -1,8 +1,4 @@
-**Login:** agaliste
-
-**Student Mail:** agaliste@student.42madrid.com 
-#
-Started at: **21/01/2021 at 12:00**
+[![agaliste's 42 stats](https://badge42.herokuapp.com/api/stats/agaliste?privacyName=true&)]()
 
 These are all my projects and exams (only the grade) in my 42-Cursus of [42Madrid Fundación Telefónica](https://www.42madrid.com/).
 
