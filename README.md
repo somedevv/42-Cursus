@@ -19,3 +19,9 @@ These are all my projects and exams (only the grade) in my 42-Cursus of [42Madri
 |  01  |get_next_line								|	[get_next_line/](https://github.com/somedevv/42-Cursus/tree/master/C/get_next_line)		| get_next_line.c, get_next_line_utils.c, get_next_line.h | Not Graded Yet |
 |  02  |born2beroot								|	[born2beroot/](https://github.com/somedevv/42-Cursus/tree/master/born2beroot/)		| signature.txt | Not Graded Yet |
 |  03  |printf								|	[ft_printf/](https://github.com/somedevv/42-Cursus/tree/master/ft_printf/)		| *.c, *.h, Makefile | Not Graded Yet |
+
+## [C++ Projects](https://github.com/somedevv/42-Cursus/tree/master/C++)
+
+|  ##  |			Name				|	Directory	| Files | Mark |
+|:----:|:-----------------------------------:|:------------------:|:--------------:|:--------------:|
+|  00  |Module 00								|	[Module 00/](https://github.com/somedevv/42-Cursus/tree/master/C%2B%2B/Module_00)		| [ex00/](https://github.com/somedevv/42-Cursus/tree/master/C%2B%2B/Module_00/ex00) [ex01/](https://github.com/somedevv/42-Cursus/tree/master/C%2B%2B/Module_00/ex01) ex02/ | Not Graded Yet |
