@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 23:37:11 by agaliste          #+#    #+#             */
-/*   Updated: 2021/09/03 02:01:13 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/09/05 20:31:08 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*get_next_line(int fd)
 	if (check_buffer(pos, &line))
 		return (line);
 	rd = read(fd, pos, BUFFER_SIZE);
-	while (rd)
+	while (rd && rd != -1)
 	{
 		i++;
 		if (check_buffer(pos, &line))
