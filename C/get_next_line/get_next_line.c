@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 23:37:11 by agaliste          #+#    #+#             */
-/*   Updated: 2021/09/05 20:31:08 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/09/14 01:05:18 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,10 @@ char	*get_next_line(int fd)
 	int			i;
 	i = 0;
 	line = malloc(sizeof(char) * BUFFER_SIZE + 1);
-	if (fd < 0 || fd > 256 || BUFFER_SIZE <= 0 || !line)
+	if (fd < 0 || fd > 256 || BUFFER_SIZE <= 0 || !line) {
+		free(line);
 		return (NULL);
+	}
 	ft_bzero(line, BUFFER_SIZE + 1);
 	if (check_buffer(pos, &line))
 		return (line);
