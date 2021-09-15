@@ -13,9 +13,12 @@ SRCS =	printf/printf.c \
 		libft/ft_putlngnbr_base.c \
 		libft/check_base.c \
 		libft/ft_atoi.c \
-		libft/checkstring.c \
+		helper/checks.c \
 		libft/ft_bzero.c \
-		operators/rotation.c
+		operators/rotation.c \
+		solver/solve_5_or_less.c \
+		helper/find.c \
+		helper/calc.c
 		
 PSRCS =	push_swap.c \
 		libft.a
@@ -47,7 +50,7 @@ remake:
 
 clean:  
 		@echo "\033[1;36mCleaning...\033[0m"
-		@${RM} ${OBJS} ${PNAME}
+		@${RM} ${OBJS}
 		@echo "\033[1;32mSome junk removed!\033[0m"
 
 fclean:

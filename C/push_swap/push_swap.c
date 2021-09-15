@@ -6,36 +6,35 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 15:14:57 by agaliste          #+#    #+#             */
-/*   Updated: 2021/09/12 20:28:42 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/09/15 03:32:21 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswp.h"
 
+void	pushswp(int argc, int *a, int *b)
+{
+	if (argc == 2)
+		solve_2(a);
+	// if (argc == 3)
+	// 	solve_3(a);
+	b = 0;
+}
+
 int	main(int argc, char **argv)
 {
-	int *str;
-	int i;
-	int j;
+	int	*a;
+	int	*b;
 
-	i = 1;
-	j = 0;
-	str = malloc(sizeof(int));
-	if (checkstring(argv, argc) == 1 || argc < 2 || !argv || !str)
+	a = malloc(sizeof(int) * argc - 1);
+	b = malloc(sizeof(int) * argc - 1);
+	if (checkstring(argv, argc - 1) != 0 || argc < 2 || !argv || !a || !b)
 	{
-		ft_printf("Error\n");
+		freestack(a, b);
 		return (1);
 	}
-	while(i < argc)
-		str[j++] = ft_atoi(argv[i++]);
-	for(int i = 0; i < argc - 1; i++)
-	 	ft_printf("%d ", str[i]);
-	ft_printf("\n");
-	rotate(str, str + 1, argc - 2);
-	for(int i = 0; i < argc - 1; i++)
-	 	ft_printf("%d ", str[i]);
-	ft_printf("\n");
-	// reverse_rotate(str + 1, str, argc - 2);
-	free(str);
-	return(1);
+	if (initchecks(argv, argc, a, b) == 1)
+		return (1);
+	pushswp(argc - 1, a, b);
+	return (0);
 }

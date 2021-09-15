@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 03:47:09 by agaliste          #+#    #+#             */
-/*   Updated: 2021/09/12 20:44:49 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/09/14 22:05:58 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,4 @@
 void	*push(const void *src, void *dst){
 	if (!src || !dst)
 		return (NULL);
-	
-	
 }

@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checkstring.c                                      :+:      :+:    :+:   */
+/*   find.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 04:00:44 by agaliste          #+#    #+#             */
-/*   Updated: 2021/09/07 04:42:47 by agaliste         ###   ########.fr       */
+/*   Created: 2021/09/15 00:00:49 by agaliste          #+#    #+#             */
+/*   Updated: 2021/09/15 03:27:05 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../pushswp.h"
 
-int	checkstring(char **argv, int len)
+int	find_greater(int *arr, int argc)
 {
-	int i;
-	int j;
-	
+	int	i;
+	int	greater;
+
 	i = 1;
-	while(i < len)
+	greater = arr[0];
+	while (i < argc)
 	{
-		j = 0;
-		while (argv[i][j] != '\0')
-		{
-			if (argv[i][j] >= ':' || argv[i][j] <= '/')
-				return (1);
-			j++;
-		}
+		if (arr[i] > greater)
+			greater = arr[i];
 		i++;
 	}
-	return (0);
+	return (greater);
 }

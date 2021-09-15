@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 13:12:25 by agaliste          #+#    #+#             */
-/*   Updated: 2021/09/07 04:58:19 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/09/14 23:52:03 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ int		ft_hexpoint(unsigned long pnt);
 size_t	ft_strlen(const char *str);
 int		ft_prsprint(int i, int cont, const char *input, va_list	ap);
 int		check_base(char *base);
-int		ft_atoi(const char *str);
-int		checkstring(char **argv, int len);
+int		long long ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 
 #endif
