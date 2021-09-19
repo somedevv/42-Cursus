@@ -6,16 +6,22 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 23:37:11 by agaliste          #+#    #+#             */
-/*   Updated: 2021/09/14 01:05:18 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/09/19 01:56:07 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
+void	*freeline(char *line)
+{
+	free(line);
+	return (NULL);
+}
+
 int	check_buffer(char *pos, char **line)
 {
-	char	*aux;
-	char	*otro;
+	char		*aux;
+	char		*otro;
 	static char	aux2[BUFFER_SIZE + 1];
 
 	aux = ft_strchr(pos, '\n');
@@ -45,28 +51,21 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	pos[BUFFER_SIZE + 1];
 	int			rd;
-	int			i;
-	i = 0;
+
 	line = malloc(sizeof(char) * BUFFER_SIZE + 1);
-	if (fd < 0 || fd > 256 || BUFFER_SIZE <= 0 || !line) {
-		free(line);
-		return (NULL);
-	}
+	if (fd < 0 || fd > 256 || BUFFER_SIZE <= 0 || !line)
+		return (freeline(line));
 	ft_bzero(line, BUFFER_SIZE + 1);
 	if (check_buffer(pos, &line))
 		return (line);
 	rd = read(fd, pos, BUFFER_SIZE);
 	while (rd && rd != -1)
 	{
-		i++;
 		if (check_buffer(pos, &line))
 			return (line);
 		rd = read(fd, pos, BUFFER_SIZE);
 	}
 	if (line[0] == '\0')
-	{
-		free(line);
-		return (NULL);
-	}
+		return (freeline(line));
 	return (line);
 }

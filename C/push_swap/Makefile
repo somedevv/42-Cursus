@@ -13,8 +13,10 @@ SRCS =	printf/printf.c \
 		libft/ft_putlngnbr_base.c \
 		libft/check_base.c \
 		libft/ft_atoi.c \
+		libft/ft_split.c \
 		helper/checks.c \
 		libft/ft_bzero.c \
+		libft/ft_strlcpy.c \
 		operators/rotation.c \
 		solver/solve_5_or_less.c \
 		helper/find.c \

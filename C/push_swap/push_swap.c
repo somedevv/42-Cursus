@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 15:14:57 by agaliste          #+#    #+#             */
-/*   Updated: 2021/09/15 03:32:21 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/09/18 23:48:26 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 
 	a = malloc(sizeof(int) * argc - 1);
 	b = malloc(sizeof(int) * argc - 1);
-	if (checkstring(argv, argc - 1) != 0 || argc < 2 || !argv || !a || !b)
+	if (argc < 2 || !argv || !a || !b || checkstring(argv, argc - 1) != 0)
 	{
 		freestack(a, b);
 		return (1);

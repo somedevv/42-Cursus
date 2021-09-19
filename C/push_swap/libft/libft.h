@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 13:12:25 by agaliste          #+#    #+#             */
-/*   Updated: 2021/09/14 23:52:03 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/09/18 23:22:44 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdarg.h>
+# include <stdlib.h>
 # include "../printf/printf.h"
 
 int		ft_putchar(char c);
@@ -29,5 +30,7 @@ int		ft_prsprint(int i, int cont, const char *input, va_list	ap);
 int		check_base(char *base);
 int		long long ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
+char	**ft_split(char const *s, char c);
+size_t	ft_strlcpy(char *dst, char *src, size_t dstsize);
 
 #endif
