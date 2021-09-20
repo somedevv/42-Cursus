@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/25 12:08:06 by agaliste          #+#    #+#             */
-/*   Updated: 2021/08/14 05:04:47 by agaliste         ###   ########.fr       */
+/*   Created: 2021/01/22 17:33:08 by agaliste          #+#    #+#             */
+/*   Updated: 2021/03/11 13:57:07 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putchar(char c)
+char	*ft_strrchr(const char *s, int n)
 {
-	return (write(1, &c, 1));
+	char	*ret;
+	char	*null;
+
+	ret = (char *)s;
+	null = (char *) NULL;
+	if (ft_strchr(ret, n) == null)
+		return (NULL);
+	while (*ret != '\0')
+		ret++;
+	while (*ret != n)
+		ret--;
+	return (ret);
 }

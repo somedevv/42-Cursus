@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/21 13:06:00 by agaliste          #+#    #+#             */
-/*   Updated: 2021/03/11 13:44:59 by agaliste         ###   ########.fr       */
+/*   Created: 2021/01/24 20:58:38 by agaliste          #+#    #+#             */
+/*   Updated: 2021/09/20 19:50:32 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	if (!dst && !src)
+		return (NULL);
+	if (src > dst)
+	{
+		while (i < len)
+		{
+			((char *)dst)[i] = ((char *)dst)[i];
+			i++;
+		}
+	}
+	else
+	{
+		i = len;
+		while (i-- > 0)
+			((char *)dst)[i] = ((char *)dst)[i];
+	}
+	return (dst);
 }

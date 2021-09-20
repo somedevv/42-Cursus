@@ -6,38 +6,41 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 03:15:47 by agaliste          #+#    #+#             */
-/*   Updated: 2021/09/15 02:57:38 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/09/20 20:25:18 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushswp.h"
 
-void	rotate(int *dst, const int *src, int n, char stack)
+void	ft_lstprelastdel(t_list **stack)
 {
-	int	aux;
-	int	i;
-
-	i = 0;
-	aux = dst[0];
-	while (i < n){
-		dst[i] = src[i + 1];
+	t_list *lst;
+	int i;
+	int n;
+	
+	lst = *stack;
+	n = ft_lstsize(stack);
+	i = 1;
+	while (i < n)
+	{
+		lst = lst->next;
 		i++;
 	}
-	dst[n - 1] = aux;
-	ft_printf("r%c\n", stack);
+	*stack = lst->next;
+	lst->next = NULL;
 }
 
-void	reverse_rotate(int *dst, const int *src, int n, char stack)
+void	rotate(t_list **stack)
 {
-	int aux;
-	int i;
+	t_list *lst;
 
-	i = n - 1;
-	aux = dst[n - 1];
-	while (i > 0){
-		dst[i] = src[i - 1];
-		i--;
-	}
-	dst[0] = aux;
-	ft_printf("r%c\n", stack);
+	lst = ft_lstlast(stack);
+	ft_lstadd_front(stack, lst->content);
+	ft_lstprelastdel(stack);
+	free(lst);
+}
+
+void	reverse_rotate(t_list **stack)
+{
+	
 }

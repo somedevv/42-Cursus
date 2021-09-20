@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/14 03:29:39 by agaliste          #+#    #+#             */
-/*   Updated: 2021/09/06 17:19:00 by agaliste         ###   ########.fr       */
+/*   Created: 2021/01/23 16:40:44 by agaliste          #+#    #+#             */
+/*   Updated: 2021/09/20 19:36:32 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#include "libft.h"
 
-# include "../libft/libft.h"
+void	*ft_memcpy(void *dst, const void *src, size_t n)
+{
+	size_t	i;
 
-int	ft_printf(const char *inp, ...);
-
-#endif
+	i = 0;
+	if (!dst && !src)
+		return (NULL);
+	while (i < n)
+	{
+		((char *)dst)[i] = ((const char *)src)[i];
+		i++;
+	}
+	return (dst);
+}
