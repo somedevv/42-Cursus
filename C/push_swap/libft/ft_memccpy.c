@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hexpoint.c                                      :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/30 02:03:58 by agaliste          #+#    #+#             */
-/*   Updated: 2021/09/06 17:08:59 by agaliste         ###   ########.fr       */
+/*   Created: 2021/01/23 19:09:29 by agaliste          #+#    #+#             */
+/*   Updated: 2021/03/11 13:51:57 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_hexpoint(unsigned long pnt)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	int	cont;
+	size_t	i;
 
-	cont = 0;
-	cont += write(1, "0x", 2);
-	if (pnt != 0)
-		cont += ft_putlngnbr_base(pnt, "0123456789abcdef");
-	else
-		cont += write(1, "0", 1);
-	return (cont);
+	i = 0;
+	if (!dst && !src)
+		return (NULL);
+	while (i < n)
+	{
+		((char *)dst)[i] = ((const char *)src)[i];
+		if (((const unsigned char *)src)[i] == (unsigned char)c)
+			return (&dst[++i]);
+		i++;
+	}
+	return (NULL);
 }

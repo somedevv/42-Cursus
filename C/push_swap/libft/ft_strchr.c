@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/21 13:06:00 by agaliste          #+#    #+#             */
-/*   Updated: 2021/03/11 13:44:59 by agaliste         ###   ########.fr       */
+/*   Created: 2021/01/22 13:47:37 by agaliste          #+#    #+#             */
+/*   Updated: 2021/09/20 19:36:04 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strchr(const char *s, int n)
 {
-	size_t	i;
+	char	*ret;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	if (!s)
+		return (NULL);
+	ret = (char *)s;
+	while (*ret != n)
+	{
+		if (*ret == '\0')
+			return (NULL);
+		ret++;
+	}
+	return (ret);
 }

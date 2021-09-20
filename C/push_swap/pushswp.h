@@ -1,7 +1,7 @@
 #define PUSHSWP_H
 #ifdef PUSHSWP_H
 
-# include "printf/printf.h"
+# include "libft/libft.h"
 # include <stdlib.h>
 
 /*
@@ -15,8 +15,8 @@ void	pushswp(int argc, int *a, int *b);
 ** Operator Functions
 */
 
-void	rotate(int *dst, const int *src, int argc, char stack);
-void	reverse_rotate(int *dst, const int *src, int n, char stack);
+void	rotate(t_list **stack);
+void	reverse_rotate(t_list **stack);
 
 /*
 ** Helper Functions
