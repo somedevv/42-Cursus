@@ -6,34 +6,24 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 15:14:57 by agaliste          #+#    #+#             */
-/*   Updated: 2021/09/20 20:34:29 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/09/22 12:14:33 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswp.h"
 
-void	printff(void *c)
+void	testprint(void *c)
 {
 	printf("%s", c);
-}
-
-void	pushswp(int argc, int *a, int *b)
-{
-	if (argc == 2)
-		solve_2(a);
-	// if (argc == 3)
-	// 	solve_3(a);
-	b = 0;
 }
 
 int	main(int argc, char **argv)
 {
 	t_list *a;
+	t_list *b;
 
-	a->content = "papa";
-	ft_lstadd_back(&a, ft_lstnew("pepe"));
-	ft_lstadd_back(&a, ft_lstnew("pipi"));
-	rotate(&a);
-	ft_lstiter(a, printff);
-	return (0);
+	a = ft_lstnew(ft_atoi(argv[1]));
+	for (int i = 2; i < argc; i++)
+		ft_lstadd_back(&a, ft_lstnew(ft_atoi(argv[i])));
+	solve2(a);
 }

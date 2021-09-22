@@ -44,11 +44,8 @@ SRCS =	libft/ft_isdigit.c \
 		libft/ft_lstclear.c \
 		libft/ft_lstiter.c \
 		libft/ft_lstmap.c \
-		operators/rotation.c \
-		solver/solve_5_or_less.c \
-		helper/checks.c \
-		helper/find.c \
-		helper/calc.c
+		libft/ft_lstdel_last.c \
+		functions/operations.c \
 		
 PSRCS =	push_swap.c \
 		libft.a
