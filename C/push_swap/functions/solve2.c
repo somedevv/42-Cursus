@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   solve2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 03:51:44 by agaliste          #+#    #+#             */
-/*   Updated: 2021/09/12 20:47:22 by agaliste         ###   ########.fr       */
+/*   Created: 2021/09/21 18:11:08 by agaliste          #+#    #+#             */
+/*   Updated: 2021/09/22 12:07:26 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushswp.h"
 
-void	*swap(void *dst){
-	int i;
-
-	i = 0;
-	if (!dst)
-		return (NULL);
-	while (((int *)dst)[i])
-		i++;
-	if(i <= 1)
-		return (NULL);
-	
+void	solve2(t_list *lst)
+{
+	if (lst->content > lst->next->content)
+	{
+		rotate(&lst, ft_lstsize(lst));
+		printf("ra");
+	}
 }

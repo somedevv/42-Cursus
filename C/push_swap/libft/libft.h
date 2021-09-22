@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 13:12:25 by agaliste          #+#    #+#             */
-/*   Updated: 2021/09/20 19:51:02 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/09/21 15:31:18 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,10 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+
+/*
+** More functions
+*/
+void				ft_lstdel_last(t_list *lista);
 
 #endif

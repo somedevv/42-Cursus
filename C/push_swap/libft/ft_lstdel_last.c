@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find.c                                             :+:      :+:    :+:   */
+/*   ft_dellast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/15 00:00:49 by agaliste          #+#    #+#             */
-/*   Updated: 2021/09/15 03:27:05 by agaliste         ###   ########.fr       */
+/*   Created: 2021/09/21 10:35:23 by agaliste          #+#    #+#             */
+/*   Updated: 2021/09/21 15:30:57 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswp.h"
+#include "libft.h"
 
-int	find_greater(int *arr, int argc)
+void	ft_lstdel_last(t_list *lst)
 {
-	int	i;
-	int	greater;
+	t_list	*temp;
+	int		n;
+	int		i;
 
+	n = ft_lstsize(lst);
+	temp = lst;
 	i = 1;
-	greater = arr[0];
-	while (i < argc)
-	{
-		if (arr[i] > greater)
-			greater = arr[i];
-		i++;
-	}
-	return (greater);
+	while (++i < n)
+		temp = temp->next;
+	free(temp->next);
+	temp->next = NULL;
 }
