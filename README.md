@@ -1,6 +1,6 @@
 [![agaliste's 42 stats](https://badge42.herokuapp.com/api/stats/agaliste?privacyName=true&)](https://github.com/somedevv/42-Cursus)
 
-These are all my projects and exams (only the grade) in my 42-Cursus of [42Madrid Fundación Telefónica](https://www.42madrid.com/).
+These are all my projects and exams grade in the 42-Cursus of [42Madrid Fundación Telefónica](https://www.42madrid.com/).
 
 ## Disclaimer
 **Project PDFs are in Spanish**
