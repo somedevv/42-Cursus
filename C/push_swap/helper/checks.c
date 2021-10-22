@@ -1,25 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/28 18:45:17 by agaliste          #+#    #+#             */
-/*   Updated: 2021/10/22 19:27:11 by agaliste         ###   ########.fr       */
+/*   Created: 2021/10/22 21:34:48 by agaliste          #+#    #+#             */
+/*   Updated: 2021/10/22 21:35:16 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../pushswp.h"
 
-t_list	*ft_lstnew(void *content)
+int check(t_stack *a, int num)
 {
-	t_list	*newnode;
+	int size = ft_lstsize2(a);
+	for (int i = 1; i < size; i++)
+	{
+		if (num == a->next->num)
+			return(1);
+		a = a->next;
+	}
+	return(0);
+}
 
-	newnode = malloc(sizeof(t_list));
-	if (newnode == NULL)
-		return (NULL);
-	newnode->content = content;
-	newnode->next = NULL;
-	return (newnode);
+int	checkdupp(t_stack *a)
+{
+	int	i;
+	int	j;
+
+	i = ft_lstsize2(a);
+	j = 2;
+	while (j < i)
+	{
+		if (check(a, a->num))
+			return (1);
+		a = a->next;
+		j++;
+	}
+	return (0);
 }

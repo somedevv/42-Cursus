@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   extra.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/28 18:45:17 by agaliste          #+#    #+#             */
-/*   Updated: 2021/10/22 19:27:11 by agaliste         ###   ########.fr       */
+/*   Created: 2021/10/22 21:28:04 by agaliste          #+#    #+#             */
+/*   Updated: 2021/10/22 21:30:03 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../pushswp.h"
 
-t_list	*ft_lstnew(void *content)
+void printlist(int a)
 {
-	t_list	*newnode;
+	printf("%i\n", a);
+}
 
-	newnode = malloc(sizeof(t_list));
-	if (newnode == NULL)
-		return (NULL);
-	newnode->content = content;
-	newnode->next = NULL;
-	return (newnode);
+void	freestr(char **str)
+{
+	int	j;
+
+	j = 0;
+	while (str[j])
+		free(str[++j]);
+	free(str);
 }
