@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 08:50:26 by agaliste          #+#    #+#             */
-/*   Updated: 2021/10/22 13:51:19 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/10/22 18:20:12 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	parse(char **str)
 				return (0);
 			}
 		}
-		if (atol(str[i]) >= 2147483647 || atol(str[i]) < -2147483648)
+		if (ft_atoli(str[i]) > 2147483647 || ft_atoli(str[i]) < -2147483648)
 		{
 			printf("KO! -> Number [%s] too big\n", str[i]);
 			return (0);
@@ -45,18 +45,4 @@ int	parse(char **str)
 		}
 	}
 	return (1);
-}
-
-int	main(int argc, char **argv)
-{
-	(void)argc;
-	for(int i = 1; argv[i]; i++)
-	{
-		printf("----------- %i -----------\n", i);
-		if (parse(ft_split((argv[i]), ' ')))
-		{
-			write(1, "OK! Savíng value in list\n", 4);
-		}
-	}
-	return (0);
 }
