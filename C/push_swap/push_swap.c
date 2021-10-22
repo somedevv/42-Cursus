@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 15:14:57 by agaliste          #+#    #+#             */
-/*   Updated: 2021/10/22 18:50:32 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:07:44 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@ int	main(int argc, char **argv)
 		if (!(parse(str)))
 		{
 			printf("----------- %i -----------\n", i);
-			for(int j = 0; str[j]; j++)
-				free(str[j]);
-			free(str);
 			return 0;
 		}
 		for(int j = 0; str[j]; j++)
