@@ -6,7 +6,7 @@
 #    By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 10:00:31 by tmatis            #+#    #+#              #
-#    Updated: 2021/10/22 17:36:53 by agaliste         ###   ########.fr        #
+#    Updated: 2021/10/22 19:06:16 by agaliste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -139,13 +139,13 @@ endif
 define run_and_test
 printf "%b%-46b" "$(COM_COLOR)$(COM_STRING) " "$(OBJ_COLOR)$(@F)$(NO_COLOR)"; \
 $(RUN_CMD); \
-if [ $$RESULT -ne 0 ]; then \
+if [[ $$RESULT -ne 0 ]]; then \
 	printf "%b\n" "$(ERROR_COLOR)[✖]$(NO_COLOR)"; \
 	rm -rf .files_changed; \
-	if [ $(NOVISU) -eq 0 ]; then \
+	if [[ $(NOVISU) -eq 0 ]]; then \
 		echo; \
 	fi; \
-elif [ -s $@.log ]; then \
+elif [[ -s $@.log ]]; then \
 	printf "%b\n" "$(WARN_COLOR)[⚠]$(NO_COLOR)"; \
 else  \
 	printf "%b\n" "$(OK_COLOR)[✓]$(NO_COLOR)"; \
@@ -161,18 +161,18 @@ define save_files_changed
 	TO_COMPILE=`echo $$FILE_CPP | wc -w`; \
 	for FILE in $$FILE_CPP; do \
 		for OBJ in $$FILE_OBJ; do \
-			if [ $${FILE%$(FILE_EXTENSION)} = $${OBJ%.o} ]; then \
-				if [ $(SRCS_PATH)/$$FILE -ot objs/$$OBJ ]; then \
+			if [[ $${FILE%$(FILE_EXTENSION)} = $${OBJ%.o} ]]; then \
+				if [[ $(SRCS_PATH)/$$FILE -ot objs/$$OBJ ]]; then \
 					FILE_DEP=`echo objs/$$OBJ | sed 's/\.o/\.d/'`; \
 					HEAD_FILES=`< $$FILE_DEP xargs | grep -oh "\w*.h\w*"`; \
 					RECOMPILE=0; \
 					for HEAD in $$HEAD_FILES; do \
-						if [ $(SRCS_PATH)/$$HEAD -nt objs/$$OBJ ]; then \
+						if [[ $(SRCS_PATH)/$$HEAD -nt objs/$$OBJ ]]; then \
 							RECOMPILE=1; \
 							break; \
 						fi; \
 					done; \
-					if [ $$RECOMPILE -eq 0 ]; then \
+					if [[ $$RECOMPILE -eq 0 ]]; then \
 						((TO_COMPILE=$$TO_COMPILE-1)); \
 					fi;\
 				fi; \
@@ -185,7 +185,7 @@ endef
 define draw_bar
 	FILE_TOTAL=`bash -c 'cat .files_changed | cut -d"/" -f2'`; \
 	FILE_DONE=`bash -c 'cat .files_changed | cut -d"/" -f1'`; \
-	if [ $$FILE_TOTAL -eq 0 ]; then \
+	if [[ $$FILE_TOTAL -eq 0 ]]; then \
 		FILE_TOTAL=1; \
 		FILE_DONE=1; \
 	fi; \
@@ -194,7 +194,7 @@ define draw_bar
 	printf "$(OBJ_COLOR)[$(NO_COLOR)"; \
 	i=0; \
 	while [ $$i -lt 48 ]; do \
-		if [ $$i -lt $$RES ]; then \
+		if [[ $$i -lt $$RES ]]; then \
 			printf "$(OK_COLOR)█$(NO_COLOR)"; \
 		else \
 			printf "$(COM_COLOR)▒$(NO_COLOR)"; \
@@ -209,7 +209,7 @@ define draw_bar
 endef
 
 define display_progress_bar
-	if [ $(NOVISU) -eq 0 ]; then \
+	if [[ $(NOVISU) -eq 0 ]]; then \
 		line=`bash -c 'oldstty=$$(stty -g); stty raw -echo min 0; tput u7 > /dev/tty; IFS=";" read -r -d R -a pos; stty $$oldstty; row=$$(($${pos[0]:2} - 1)); echo $$row'`; \
 		max_line=`tput lines`; \
 		((max_line=$$max_line-2));\
@@ -221,7 +221,7 @@ define display_progress_bar
 			((i=$$i+1)); \
 		done; \
 		tput rc; \
-		if [ $$line -gt $$max_line ]; then \
+		if [[ $$line -gt $$max_line ]]; then \
 			new_line=1; \
 			echo ; \
 		else \
@@ -230,7 +230,7 @@ define display_progress_bar
 		tput sc; \
 		tput cup $$line; \
 		$(draw_bar) \
-		if [ $$new_line -eq 1 ]; then \
+		if [[ $$new_line -eq 1 ]]; then \
 			((line=$$line-1));\
 			tput cup $$line; \
 		else \
