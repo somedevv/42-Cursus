@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 13:12:25 by agaliste          #+#    #+#             */
-/*   Updated: 2021/10/21 19:15:33 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/10/22 13:38:42 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,6 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 ** More functions
 */
 void				ft_lstdel_last(t_list *lista);
+long				ft_atoli(const char *s);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 10:00:31 by tmatis            #+#    #+#              #
-#    Updated: 2021/10/21 19:20:52 by agaliste         ###   ########.fr        #
+#    Updated: 2021/10/22 13:54:34 by agaliste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SRCS			= 	libft/ft_isdigit.c \
 					libft/ft_isprint.c \
 					libft/ft_strlcat.c \
 					libft/ft_atoi.c \
+					libft/ft_atoli.c \
 					libft/ft_putchar_fd.c \
 					libft/ft_putstr_fd.c \
 					libft/ft_strlcpy.c \
@@ -80,7 +81,7 @@ SRCS			= 	libft/ft_isdigit.c \
 					libft/ft_lstdel_last.c \
 					functions/operations.c \
 
-MAIN			= tests.c
+MAIN			= helper/parser.c
 
 ################################################################################
 #                                  Makefile  objs                              #
