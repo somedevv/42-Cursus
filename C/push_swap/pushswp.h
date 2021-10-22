@@ -33,6 +33,8 @@ void	push(t_list	**src, t_list	**dst);
 ** Helper Functions
 */
 
+int	parse(char **str);
+
 /*
 ** Solver Functions
 */

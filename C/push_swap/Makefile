@@ -6,7 +6,7 @@
 #    By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 10:00:31 by tmatis            #+#    #+#              #
-#    Updated: 2021/10/22 13:54:34 by agaliste         ###   ########.fr        #
+#    Updated: 2021/10/22 17:36:53 by agaliste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,8 +80,9 @@ SRCS			= 	libft/ft_isdigit.c \
 					libft/ft_lstmap.c \
 					libft/ft_lstdel_last.c \
 					functions/operations.c \
+					helper/parser.c \
 
-MAIN			= helper/parser.c
+MAIN			= push_swap.c
 
 ################################################################################
 #                                  Makefile  objs                              #
