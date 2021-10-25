@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 21:18:20 by agaliste          #+#    #+#             */
-/*   Updated: 2021/10/22 21:35:49 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/10/23 03:53:22 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,24 +47,31 @@ int	parse(char **str)
 	return (1);
 }
 
-void	savetolist(t_stack **lst, int argc, char **argv)
+void	savetolist(t_list **lst, int argc, char **argv)
 {
 	char	**str;
 	int		i;
 	int		j;
+	t_stack *num;
 
 	i = 1;
+	num = NULL;
 	while (i < argc)
 	{
 		str = ft_split((argv[i++]), ' ');
 		j = 0;
 		while (str[j])
-			ft_lstadd_back2(lst, ft_lstnew2(ft_atoi(str[j++])));
+		{
+			num = ft_calloc(1, sizeof(t_stack*));
+			num->num = ft_atoi(str[j++]);
+			ft_lstadd_back(lst, ft_lstnew(num));
+			free(num);
+		}
 		freestr(str);
 	}
 }
 
-int	init(char **argv, int argc, t_stack *a)
+int	init(char **argv, int argc, t_list *a)
 {
 	char	**str;
 	int		i;
@@ -76,6 +83,7 @@ int	init(char **argv, int argc, t_stack *a)
 		if (!(parse(str)))
 		{
 			printf("----------- %i -----------\n", i);
+			freestr(str);
 			return (1);
 		}
 		freestr(str);
@@ -87,6 +95,6 @@ int	init(char **argv, int argc, t_stack *a)
 		write(1, "DUP\n", 4);
 		return (1);
 	}
-	ft_lstiter2(a, printlist);
+	ft_lstiter(a, printlist);
 	return (0);
 }

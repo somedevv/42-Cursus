@@ -6,7 +6,7 @@
 #    By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 10:00:31 by tmatis            #+#    #+#              #
-#    Updated: 2021/10/22 21:38:06 by agaliste         ###   ########.fr        #
+#    Updated: 2021/10/23 02:34:20 by agaliste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,6 @@ SRCS			= 	libft/ft_isdigit.c \
 					libft/ft_lstmap.c \
 					libft/ft_lstdel_last.c \
 					functions/operations.c \
-					helper/listools.c \
 					helper/init.c \
 					helper/tools.c \
 					helper/checks.c \

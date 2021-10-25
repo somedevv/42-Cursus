@@ -6,37 +6,30 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 21:34:48 by agaliste          #+#    #+#             */
-/*   Updated: 2021/10/22 21:35:16 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/10/23 03:40:16 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushswp.h"
 
-int check(t_stack *a, int num)
+int check(t_list *a, int num)
 {
-	int size = ft_lstsize2(a);
-	for (int i = 1; i < size; i++)
+	while (a->next)
 	{
-		if (num == a->next->num)
+		if (num == ((t_stack*)a->next->content)->num)
 			return(1);
 		a = a->next;
 	}
 	return(0);
 }
 
-int	checkdupp(t_stack *a)
+int	checkdupp(t_list *a)
 {
-	int	i;
-	int	j;
-
-	i = ft_lstsize2(a);
-	j = 2;
-	while (j < i)
+	while (a->next)
 	{
-		if (check(a, a->num))
+		if (check(a, ((t_stack*)a->content)->num))
 			return (1);
 		a = a->next;
-		j++;
 	}
 	return (0);
 }
