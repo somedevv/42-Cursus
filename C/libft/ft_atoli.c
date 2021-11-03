@@ -1,28 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atolli.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/23 16:40:44 by agaliste          #+#    #+#             */
-/*   Updated: 2021/09/20 19:36:32 by agaliste         ###   ########.fr       */
+/*   Created: 2021/01/22 21:06:01 by agaliste          #+#    #+#             */
+/*   Updated: 2021/10/22 13:38:03 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+long	ft_atoli(const char *str)
 {
-	size_t	i;
+	int		i;
+	long	num;
+	long	neg;
 
 	i = 0;
-	if (!dst && !src)
-		return (NULL);
-	while (i < n)
+	num = 0;
+	neg = 1;
+	while (*str == '\f' || *str == '\n' || *str == '\r'
+		|| *str == '\t' || *str == '\v' || *str == ' ')
+		str++;
+	if (!str[i])
+		return (0);
+	if (str[i] == '+')
+		i++;
+	else if (str[i] == '-')
 	{
-		((char *)dst)[i] = ((const char *)src)[i];
+		neg = -1;
 		i++;
 	}
-	return (dst);
+	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
+	{
+		num = num * 10 + str[i] - '0';
+		i++;
+	}
+	return (num * neg);
 }
