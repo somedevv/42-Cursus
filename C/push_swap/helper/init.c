@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 21:18:20 by agaliste          #+#    #+#             */
-/*   Updated: 2021/10/23 03:53:22 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/03 01:13:40 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void	savetolist(t_list **lst, int argc, char **argv)
 			num = ft_calloc(1, sizeof(t_stack*));
 			num->num = ft_atoi(str[j++]);
 			ft_lstadd_back(lst, ft_lstnew(num));
-			free(num);
 		}
 		freestr(str);
 	}
@@ -77,18 +76,23 @@ int	init(char **argv, int argc, t_list *a)
 	int		i;
 
 	i = 1;
-	while (argv[i])
+	if (argv[i])
 	{
-		str = ft_split((argv[i]), ' ');
-		if (!(parse(str)))
+		while (argv[i])
 		{
-			printf("----------- %i -----------\n", i);
+			str = ft_split((argv[i]), ' ');
+			if (!(parse(str)))
+			{
+				printf("----------- %i -----------\n", i);
+				freestr(str);
+				return (1);
+			}
 			freestr(str);
-			return (1);
+			i++;
 		}
-		freestr(str);
-		i++;
 	}
+	else
+		return 0;
 	savetolist(&a, argc, argv);
 	if (checkdupp(a))
 	{
