@@ -34,6 +34,8 @@ SRCS =	ft_isdigit.c \
 		ft_strmapi.c \
 		ft_itoa.c \
 		ft_split.c \
+		ft_lstdel_last.c \
+		ft_atoli.c \
 
 BONUS =	ft_lstnew.c \
 		ft_lstadd_front.c \
@@ -44,6 +46,7 @@ BONUS =	ft_lstnew.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
+		ft_split.c \
 
 OBJS = ${SRCS:.c=.o}
 

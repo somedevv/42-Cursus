@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 13:18:30 by agaliste          #+#    #+#             */
-/*   Updated: 2021/02/02 19:31:48 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/03 01:33:49 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@ size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
 		return (0);
 	if (!dstsize)
 		return (ft_strlen(src));
-	while (dstsize > 1 && (dst[i] = src[i]) != 0)
+	dst[i] = src[i];
+	while (dstsize > 1 && dst[i] != 0)
 	{
 		dst[i] = src[i];
 		--dstsize;
 		++i;
+		dst[i] = src[i];
 	}
 	if (backup != 0)
 		dst[i] = '\0';

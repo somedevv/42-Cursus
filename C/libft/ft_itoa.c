@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 17:28:19 by agaliste          #+#    #+#             */
-/*   Updated: 2021/03/11 14:07:00 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/09/20 19:46:49 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,18 @@
 static int	ft_intlen(long nb)
 {
 	unsigned int	len;
+	int				b;
 
-	len = nb < 0 ? 2 : 1;
-	while (nb /= 10)
+	if (nb < 0)
+		len = 2;
+	else
+		len = 1;
+	b = nb / 10;
+	while (b)
+	{
+		b /= 10;
 		len++;
+	}
 	return (len);
 }
 
