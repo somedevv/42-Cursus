@@ -28,4 +28,4 @@ These are all my projects and exams grade in the 42-Cursus of [42Madrid Fundaci√
 
 |  ##  |			Name				|	Directory	| Files | Mark |
 |:----:|:-----------------------------------:|:------------------:|:--------------:|:--------------:|
-|  00  |Module 00								|	[Module 00/](https://github.com/somedevv/42-Cursus/tree/master/Rank&204/Module_00)		| [ex00/](https://github.com/somedevv/42-Cursus/tree/master/C%2B%2B/Module_00/ex00) [ex01/](https://github.com/somedevv/42-Cursus/tree/master/Rank&204/Module_00/ex01) ex02/ | Not Subscribed Yet |
+|  00  |Module 00								|	[Module 00/](https://github.com/somedevv/42-Cursus/tree/master/Rank&204/Module_00)		| [ex00/](https://github.com/somedevv/42-Cursus/tree/master/Rank&204/Module_00/ex00) [ex01/](https://github.com/somedevv/42-Cursus/tree/master/Rank&204/Module_00/ex01) ex02/ | Not Subscribed Yet |
