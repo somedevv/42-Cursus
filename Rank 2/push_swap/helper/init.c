@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 21:18:20 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/03 01:13:40 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/05 19:56:39 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	parse(char **str)
 		j = -1;
 		while (str[i][++j] != '\0')
 		{
-			if (ft_isalpha(str[i][j]))
+			if (ft_isalpha(str[i][j]) || ifsimbols(str[i][j], str[i][j + 1]))
 			{
 				printf("KO! -> Character [%c] in [%s]\n", str[i][j], str[i]);
 				return (0);
@@ -62,7 +62,7 @@ void	savetolist(t_list **lst, int argc, char **argv)
 		j = 0;
 		while (str[j])
 		{
-			num = ft_calloc(1, sizeof(t_stack*));
+			num = malloc(sizeof(t_stack));
 			num->num = ft_atoi(str[j++]);
 			ft_lstadd_back(lst, ft_lstnew(num));
 		}
@@ -70,7 +70,7 @@ void	savetolist(t_list **lst, int argc, char **argv)
 	}
 }
 
-int	init(char **argv, int argc, t_list *a)
+int	init(char **argv, int argc, t_list *lst)
 {
 	char	**str;
 	int		i;
@@ -93,12 +93,13 @@ int	init(char **argv, int argc, t_list *a)
 	}
 	else
 		return 0;
-	savetolist(&a, argc, argv);
-	if (checkdupp(a))
+	savetolist(&lst, argc, argv);
+	if (checkdupp(lst))
 	{
 		write(1, "DUP\n", 4);
 		return (1);
 	}
-	ft_lstiter(a, printlist);
+	ft_lstiter(lst, printlist);
+	ft_lstclear(&lst, free);
 	return (0);
 }
