@@ -15,7 +15,7 @@ top -bn1 | grep load | awk '{printf "#CPU Load: %.2f%%\n", $(NF-2)}'
 #Last Boot
 echo "#Last Boot:" $(who -b | awk ' {printf $3, $4}')
 #LVM Use
-echo "#LVM Use:" $(lvm pvdisplay | grep Allocatable | awk '{printf $2}')
+echo "#LVM Use:" $(pvdisplay | grep Allocatable | awk '{printf $2}')
 #TCP Connections
 echo "#TCP Connections:" $(ss -s | grep TCP | awk 'NR==2 {printf "%d ESTABILISHED\n", $3}')
 #Usr Log
