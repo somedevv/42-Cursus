@@ -47,6 +47,7 @@ BONUS =	ft_lstnew.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
 		ft_split.c \
+		get_next_line.c \
 
 OBJS = ${SRCS:.c=.o}
 
