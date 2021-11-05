@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_freestr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 01:48:37 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/05 23:34:59 by agaliste         ###   ########.fr       */
+/*   Created: 2021/11/05 23:21:49 by agaliste          #+#    #+#             */
+/*   Updated: 2021/11/05 23:26:40 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "solong.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_freestr(char **str)
 {
-	int	fd;
+	int	j;
 
-	parseinput(argc, argv[1]);
-	fd = open(argv[1], O_RDONLY);
-	parsemap(fd);
-	close(fd);
-	exit(0);
+	j = 0;
+	while (str[j])
+		free(str[j++]);
+	free(str);
 }
