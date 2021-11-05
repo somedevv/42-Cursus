@@ -4,6 +4,12 @@
 # include "libft/libft.h"
 # include <stdlib.h>
 
-void	parseinput(int argc, char *argv);
+void	parseinput(const int argc, const char *argv);
+
+/*
+** Helper functions
+*/
+
+void printerror(char *error);
 
 # endif
