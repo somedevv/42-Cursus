@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 13:12:25 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/05 20:48:22 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:18:23 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
-# define BUFFER_SIZE 1
 
 /*
 ** Libc Functions (Part 1)
@@ -92,6 +91,5 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 */
 void				ft_lstdel_last(t_list *lista);
 long				ft_atoli(const char *s);
-char				*get_next_line(int fd);
 
 #endif

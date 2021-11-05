@@ -36,7 +36,6 @@ SRCS =	ft_isdigit.c \
 		ft_split.c \
 		ft_lstdel_last.c \
 		ft_atoli.c \
-		get_next_line.c \
 
 BONUS =	ft_lstnew.c \
 		ft_lstadd_front.c \
