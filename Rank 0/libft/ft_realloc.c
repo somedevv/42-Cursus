@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_freestr.c                                       :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 23:21:49 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/05 23:26:40 by agaliste         ###   ########.fr       */
+/*   Created: 2021/11/07 06:23:18 by agaliste          #+#    #+#             */
+/*   Updated: 2021/11/07 06:23:39 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_freestr(char **str)
+void		*ft_realloc(void *ptr, size_t size)
 {
-	int	j;
+	void	*new_ptr;
 
-	j = 0;
-	while (str[j])
-		free(str[j++]);
-	free(str);
+	if (ptr == NULL)
+		return (malloc(size));
+	if (!size)
+		return (ptr);
+	new_ptr = malloc(size);
+	ft_memcpy(new_ptr, ptr, size);
+	return (new_ptr);
 }
