@@ -1,5 +1,5 @@
-#define SOLONG_H
-#ifdef SOLONG_H
+#ifndef SOLONG_H
+# define SOLONG_H
 
 # include "libft/libft.h"
 # include "mlx/mlx.h"
@@ -10,21 +10,19 @@
 ** STRUCTS
 */
 
-typedef struct	s_data {
+typedef struct s_data {
 	void	*img;
 	char	*addr;
 	void	*win;
 	void	*mlx;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
 	char	*path;
 	int		width;
 	int		height;
 	char	**map;
-	unsigned long int		pos[2];
+	size_t	pos[2];
+	size_t	ppos[2];
 	int		coin;
-	int		cpos[2];
+	int		moves;
 }				t_data;
 
 /*
@@ -39,26 +37,49 @@ char	**parsemap(int fd);
 */
 
 int		printerror(char *error);
-void	checkmapcontent(char **line, const int call);
 void	printmap(char **map);
-int		prgclose(int keycode, t_data *vars);
-unsigned long int		getleny(char **str);
+int		prgclose(int keycode, void *vars);
+size_t	getleny(char **str);
 void	moveup(t_data *img);
 void	moveleft(t_data *img);
 void	movedown(t_data *img);
 void	moveright(t_data *img);
-void	modifymap(t_data *img, int i);
+size_t	ft_strnolen(const char *str);
+int		checklines(char **line, size_t xlen);
+
+/*
+** Checks functions
+*/
+
+int		checklinelen(char **line, size_t xlen, size_t ylen);
 int		checkbujero(t_data img, int i);
 void	checkcoin(t_data *img, int i);
-int		checkevent(t_data *img, int i);
+
+/*
+** Maptools functions
+*/
+
+void	draw(t_data *img, int arg);
+void	changesprt(t_data img, size_t arg, size_t x, size_t y);
+int		odifymap(t_data *img, int i);
+int		modifymap(t_data *img, int i);
+
+/*
+** Checkmap functions
+*/
+
+void	checkmapcontent(char **line, int ylen, int xlen);
+
+/*
+** Printelem functions
+*/
+
+void	printelem(t_data *img, int i, size_t y, size_t x);
 
 /*
 ** MLX FUNCTIONS
 */
 
 int		key_hook(int keycode, void *vars);
-void	drawground(t_data *img);
-void	drawelse(t_data img);
 
-
-# endif
+#endif

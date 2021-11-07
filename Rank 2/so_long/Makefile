@@ -3,10 +3,13 @@ NAME = so_long
 SRCS =	main.c \
 		helper/parse.c \
 		helper/tools.c \
-		helper/checker.c \
+		helper/checks.c \
+		helper/checkmap.c \
+		helper/moves.c \
+		helper/maptools.c \
+		helper/printelem.c \
 		mlxfunc/hooks.c \
 		mlxfunc/draw.c \
-		helper/moves.c \
 
 FLAGS = -Wall -Wextra -Werror -fsanitize=address
 
@@ -35,7 +38,7 @@ clean:
 fclean: clean
 	@rm -rf $(NAME)
 
-cleanl:
+lclean:
 	@make fclean -C ./libft/
 	@make clean -C ./mlx/
 

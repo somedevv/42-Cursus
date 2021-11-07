@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 03:35:03 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/07 04:56:22 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/07 20:06:31 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,48 @@
 
 void	moveup(t_data *img)
 {
-	if (!checkevent(img, 0))
-		return ;
-	mlx_clear_window(img->mlx, img->win);
-	drawground(img);
-	modifymap(img, 0); // arriba
-	drawelse((*img));
+	if (!modifymap(img, 0))
+		draw(img, 1);
+	else
+		changesprt((*img), 1, 0, 0);
+	img->moves += 1;
+	write(1, "Moves: ", 8);
+	ft_putnbr_fd(img->moves, 1);
+	write(1, "\n", 1);
 }
 
 void	movedown(t_data *img)
 {
-	if (!checkevent(img, 1))
-		return ;
-	mlx_clear_window(img->mlx, img->win);
-	modifymap(img, 1);
-	drawground(img);
-	drawelse((*img));
+	if (!modifymap(img, 1))
+		draw(img, 6);
+	else
+		changesprt((*img), 6, 0, 0);
+	img->moves += 1;
+	write(1, "Moves: ", 8);
+	ft_putnbr_fd(img->moves, 1);
+	write(1, "\n", 1);
 }
 
 void	moveleft(t_data *img)
 {
-	if (!checkevent(img, 2))
-		return ;
-	mlx_clear_window(img->mlx, img->win);
-	modifymap(img, 2); // izq
-	drawground(img);
-	drawelse((*img));
+	if (!modifymap(img, 2))
+		draw(img, 7);
+	else
+		changesprt((*img), 7, 0, 0);
+	img->moves += 1;
+	write(1, "Moves: ", 8);
+	ft_putnbr_fd(img->moves, 1);
+	write(1, "\n", 1);
 }
 
 void	moveright(t_data *img)
 {
-	if (!checkevent(img, 3))
-		return ;
-	mlx_clear_window(img->mlx, img->win);
-	modifymap(img, 3); // drc
-	drawground(img);
-	drawelse((*img));
+	if (!modifymap(img, 3))
+		draw(img, 8);
+	else
+		changesprt((*img), 8, 0, 0);
+	img->moves += 1;
+	write(1, "Moves: ", 8);
+	ft_putnbr_fd(img->moves, 1);
+	write(1, "\n", 1);
 }

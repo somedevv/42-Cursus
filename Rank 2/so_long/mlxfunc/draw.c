@@ -6,69 +6,112 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 03:10:16 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/07 06:09:57 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/07 20:10:03 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../solong.h"
 
-void	drawground(t_data *img)
+static void	drawground(t_data *img, size_t i, size_t x, size_t y)
 {
-	for (unsigned long int i = 0, x = 0; img->map[i]; i++, x += 32)
+	size_t	j;
+
+	while (img->map[++i])
 	{
-		for (unsigned long int  j = 0, y = 0; img->map[i][j]; j++, y += 32)
+		j = -1;
+		y = 0;
+		while (img->map[i][++j])
 		{
 			if (img->map[i][j] == '1')
-			{
-				img->path = "./imgs/grass.xpm";
-				img->img = mlx_xpm_file_to_image(img->mlx, img->path, &img->width, &img->height);
-				mlx_put_image_to_window(img->mlx, img->win, img->img, y, x);
-			}
+				printelem(img, 4, y, x);
 			else
-			{
-				img->path = "./imgs/dirt.xpm";
-				img->img = mlx_xpm_file_to_image(img->mlx, img->path, &img->width, &img->height);
-				mlx_put_image_to_window(img->mlx, img->win, img->img, y, x);
-			}
+				printelem(img, 5, y, x);
 			if (img->map[i][j] == 'P')
 			{
 				img->pos[0] = i;
 				img->pos[1] = j;
 			}
+			y += 32;
 		}
+		x += 32;
 	}
 }
 
-void	drawelse(t_data img)
+static void	drawelse(t_data img, size_t i, size_t x, size_t y)
 {
-	for (unsigned long int i = 0, x = 0; img.map[i]; i++, x += 32)
+	size_t	j;
+
+	while (img.map[++i])
 	{
-		for (unsigned long int  j = 0, y = 0; img.map[i][j]; j++, y += 32)
+		j = -1;
+		y = 0;
+		while (img.map[i][++j])
 		{
 			if (img.map[i][j] == '1')
-			{
-				img.path = "./imgs/tree.xpm";
-				img.img = mlx_xpm_file_to_image(img.mlx, img.path, &img.width, &img.height);
-				mlx_put_image_to_window(img.mlx, img.win, img.img, y, x);
-			}
+				printelem(&img, 0, y, x);
 			if (img.map[i][j] == 'P')
-			{
-				img.path = "./imgs/charac.xpm";
-				img.img = mlx_xpm_file_to_image(img.mlx, img.path, &img.width, &img.height);
-				mlx_put_image_to_window(img.mlx, img.win, img.img, y, x);
-			}
+				printelem(&img, 1, y, x);
 			if (img.map[i][j] == 'C')
-			{
-				img.path = "./imgs/collec.xpm";
-				img.img = mlx_xpm_file_to_image(img.mlx, img.path, &img.width, &img.height);
-				mlx_put_image_to_window(img.mlx, img.win, img.img, y, x);
-			}
+				printelem(&img, 2, y, x);
 			if (img.map[i][j] == 'E')
-			{
-				img.path = "./imgs/exit.xpm";
-				img.img = mlx_xpm_file_to_image(img.mlx, img.path, &img.width, &img.height);
-				mlx_put_image_to_window(img.mlx, img.win, img.img, y, x);
-			}
+				printelem(&img, 3, y, x);
+			y += 32;
 		}
+		x += 32;
 	}
+}
+
+static void	drawupdt(t_data img, size_t arg, size_t x, size_t y)
+{
+	size_t	j;
+	size_t	i;
+
+	i = -1;
+	while (img.map[++i])
+	{
+		j = -1;
+		y = 0;
+		while (img.map[i][++j])
+		{
+			if (i == img.ppos[0] && j == img.ppos[1])
+				printelem(&img, 5, y, x);
+			if (img.map[i][j] == 'P')
+				printelem(&img, arg, y, x);
+			y += 32;
+		}
+		x += 32;
+	}
+}
+
+void	changesprt(t_data img, size_t arg, size_t x, size_t y)
+{
+	size_t	j;
+	size_t	i;
+
+	i = -1;
+	while (img.map[++i])
+	{
+		j = -1;
+		y = 0;
+		while (img.map[i][++j])
+		{
+			if (i == img.pos[0] && j == img.pos[1])
+				printelem(&img, 5, y, x);
+			if (img.map[i][j] == 'P')
+				printelem(&img, arg, y, x);
+			y += 32;
+		}
+		x += 32;
+	}
+}
+
+void	draw(t_data *img, int arg)
+{
+	if (arg == 0)
+	{
+		drawground(img, -1, 0, 0);
+		drawelse((*img), -1, 0, 0);
+	}
+	else
+		drawupdt(*img, arg, 0, 0);
 }

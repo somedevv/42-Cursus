@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 22:09:49 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/07 06:06:03 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/07 20:50:35 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,25 @@ void	parseinput(const int argc, const char *argv)
 
 char	**parsemap(int fd)
 {
-	char	**line;
-	int		call;
+	char	*line;
+	char	**map;
+	int		i;
+	int 	len;
 
-	line = ft_calloc(1, sizeof(char) * 100);
 	if (!fd || fd < 0)
 		exit(printerror("File non existant\n"));
-	call = 1;
-	line[0] = get_next_line(fd);
-	while (call < 5)
-		line[call++] = get_next_line(fd);
-	checkmapcontent(line, call);
-	write(1, "GOOD\n", 6);
-	return (line);
+	i = 1;
+	line = get_next_line(fd);
+	len = ft_strnolen(line);
+	if (line[0] == '\n')
+		exit(1);
+	map = ft_calloc(1, sizeof(char*) * len);
+	map[0] = line;
+	while (line)
+	{
+		line = get_next_line(fd);
+		map = (char**) ft_realloc(map, sizeof(char*) * len * i);
+		map[i++] = line;
+	}
+	return (map);
 }
