@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 01:48:37 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/07 20:24:07 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/07 21:45:50 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ int	main(int argc, char **argv)
 	close(fd);
 	if (getleny(img.map) < 2)
 		exit(printerror("Invalid map"));
-	checkmapcontent(img.map, getleny(img.map), ft_strlen(img.map[0]) - 2);
-	printmap(img.map);
 	img.coin = 0;
+	img.cocur = 0;
+	checkmapcontent(img.map, getleny(img.map), ft_strlen(img.map[0]) - 2, &img);
+	printmap(img.map);
 	img.moves = 0;
 	img.mlx = mlx_init();
 	img.win = mlx_new_window(img.mlx, 32 * (ft_strlen(img.map[0]) - 1),

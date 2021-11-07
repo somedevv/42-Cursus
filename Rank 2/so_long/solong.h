@@ -23,6 +23,7 @@ typedef struct s_data {
 	size_t	ppos[2];
 	int		coin;
 	int		moves;
+	int		cocur;
 }				t_data;
 
 /*
@@ -68,7 +69,7 @@ int		modifymap(t_data *img, int i);
 ** Checkmap functions
 */
 
-void	checkmapcontent(char **line, int ylen, int xlen);
+void	checkmapcontent(char **line, int ylen, int xlen, t_data *img);
 
 /*
 ** Printelem functions

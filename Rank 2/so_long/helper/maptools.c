@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 16:28:38 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/07 20:11:18 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/07 21:30:06 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	modifymap(t_data *img, int i)
 	checkcoin(img, i);
 	if (!(checkbujero((*img), i)))
 	{
-		if (img->coin >= 1)
+		if (img->coin == img->cocur)
 			exit(0);
 	}
 	aux = img->map[img->pos[0]][img->pos[1]];

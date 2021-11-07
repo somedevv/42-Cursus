@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 18:11:55 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/07 20:40:27 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/07 21:46:22 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,16 @@ static void	checkborder(char line)
 		exit(printerror("Map not valid: Invalid map borders\n"));
 }
 
-static void	checkelemnts(char **line)
+static void	checkelemnts(char **line, t_data *img)
 {
 	int	i;
 	int	j;
 	int	eocur;
 	int	pocur;
-	int	cocur;
 
 	i = -1;
 	eocur = 0;
 	pocur = 0;
-	cocur = 0;
 	while (line[++i])
 	{
 		j = -1;
@@ -38,27 +36,25 @@ static void	checkelemnts(char **line)
 			if (line[i][j] == 'P')
 				pocur += 1;
 			if (line[i][j] == 'C')
-				cocur += 1;
+				img->cocur += 1;
 			if (line[i][j] == 'E')
 				eocur += 1;
 		}
 	}
-	if (!(eocur < 2 && eocur > 0) && pocur == 1 && cocur > 0)
+	if (!(eocur < 2 && eocur > 0) && pocur == 1 && img->cocur > 0)
 		exit(printerror("Not enought players, escapes or coins\n"));
 }
 
-static void	checkmapcontent2(char **line, int xlen, int ylen)
+static void	checkmapcontent2(char **line, int xlen, int ylen, t_data *img)
 {
 	int	i;
 	int	j;
 	int	eocur;
 	int	pocur;
-	int	cocur;
 
 	i = -1;
 	eocur = 0;
 	pocur = 0;
-	cocur = 0;
 	while (line[++i])
 	{
 		j = -1;
@@ -71,10 +67,10 @@ static void	checkmapcontent2(char **line, int xlen, int ylen)
 				exit(printerror("Invalid element on map\n"));
 		}
 	}
-	checkelemnts(line);
+	checkelemnts(line, img);
 }
 
-void	checkmapcontent(char **line, int ylen, int xlen)
+void	checkmapcontent(char **line, int ylen, int xlen, t_data *img)
 {
 	int	eocur;
 	int	pocur;
@@ -84,5 +80,5 @@ void	checkmapcontent(char **line, int ylen, int xlen)
 	if (!line || ft_strnolen(line[0]) == getleny(line)
 		|| checklinelen(line, xlen, ylen))
 		exit(printerror("Map not valid\n"));
-	checkmapcontent2(line, xlen, ylen);
+	checkmapcontent2(line, xlen, ylen, img);
 }
