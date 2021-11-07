@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 22:09:49 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/05 23:36:44 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/07 06:06:03 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	parseinput(const int argc, const char *argv)
 		exit(printerror("Only .ber map file accepted as argument\n"));
 }
 
-void	parsemap(int fd)
+char	**parsemap(int fd)
 {
 	char	**line;
 	int		call;
@@ -40,6 +40,6 @@ void	parsemap(int fd)
 	while (call < 5)
 		line[call++] = get_next_line(fd);
 	checkmapcontent(line, call);
-	ft_freestr(line); // free str to avoid leaks
 	write(1, "GOOD\n", 6);
+	return (line);
 }
