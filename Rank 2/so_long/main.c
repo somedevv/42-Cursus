@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 01:48:37 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/07 21:45:50 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/08 11:05:03 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,18 @@ int	main(int argc, char **argv)
 	fd = open(argv[1], O_RDONLY);
 	img.map = parsemap(fd);
 	close(fd);
-	if (getleny(img.map) < 2)
-		exit(printerror("Invalid map"));
+	m.y_size = getleny(img.map);
+	m.x_size = ft_strnllen(img.map[0]);
+	if (m.y_size < 2)
+		exit(printerror("Map error: Invalid map"));
 	img.coin = 0;
 	img.cocur = 0;
-	checkmapcontent(img.map, getleny(img.map), ft_strlen(img.map[0]) - 2, &img);
+	checkmapcontent(img.map, &img);
 	printmap(img.map);
 	img.moves = 0;
 	img.mlx = mlx_init();
-	img.win = mlx_new_window(img.mlx, 32 * (ft_strlen(img.map[0]) - 1),
-			32 * (getleny(img.map) - 1), "so_long");
+	img.win = mlx_new_window(img.mlx, 32 * m.x_size,
+			32 * (m.y_size - 1), "so_long");
 	draw(&img, 0);
 	mlx_key_hook(img.win, key_hook, &img);
 	mlx_hook(img.win, 17, 0L, prgclose, &img);

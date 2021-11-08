@@ -26,9 +26,19 @@ typedef struct s_data {
 	int		cocur;
 }				t_data;
 
+struct s_map
+{
+	size_t	x_size;
+	size_t	y_size;
+	int	p_x;
+	int	p_y;
+}	m;
+
 /*
 ** Main func
 */
+
+size_t	ft_strlen2(const char *str);
 
 void	parseinput(const int argc, const char *argv);
 char	**parsemap(int fd);
@@ -46,13 +56,13 @@ void	moveleft(t_data *img);
 void	movedown(t_data *img);
 void	moveright(t_data *img);
 size_t	ft_strnolen(const char *str);
-int		checklines(char **line, size_t xlen);
+int		checklines(char **line);
 
 /*
 ** Checks functions
 */
 
-int		checklinelen(char **line, size_t xlen, size_t ylen);
+int		checklinelen();
 int		checkbujero(t_data img, int i);
 void	checkcoin(t_data *img, int i);
 
@@ -69,7 +79,7 @@ int		modifymap(t_data *img, int i);
 ** Checkmap functions
 */
 
-void	checkmapcontent(char **line, int ylen, int xlen, t_data *img);
+void	checkmapcontent(char **line, t_data *img);
 
 /*
 ** Printelem functions

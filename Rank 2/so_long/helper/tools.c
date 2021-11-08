@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 02:18:36 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/07 20:51:25 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/08 11:03:55 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,11 @@ size_t	getleny(char **str)
 {
 	int	i;
 
-	i = -1;
-	while (str[++i] != NULL)
-		;
+	i = 0;
+	if (!str)
+		exit(1);
+	while (str[i] != NULL)
+		i++;
 	return (i + 1);
 }
 

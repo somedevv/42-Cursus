@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/22 13:12:25 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/07 17:28:44 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/08 10:25:50 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,6 @@ long				ft_atoli(const char *s);
 char				*get_next_line(int fd);
 void				ft_freestr(char **str);
 void				*ft_realloc(void *ptr, size_t size);
+size_t				ft_strnllen(const char *str);
 
 #endif

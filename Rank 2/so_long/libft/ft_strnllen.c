@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_strnllen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/07 06:23:18 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/08 09:05:36 by agaliste         ###   ########.fr       */
+/*   Created: 2021/11/08 10:25:13 by agaliste          #+#    #+#             */
+/*   Updated: 2021/11/08 10:25:37 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_realloc(void *ptr, size_t size)
+size_t	ft_strnllen(const char *str)
 {
-	void	*new_ptr;
+	size_t	i;
 
-	if (ptr == NULL)
-		return (malloc(size));
-	if (!size)
-		return (ptr);
-	new_ptr = malloc(size);
-	ft_memcpy(new_ptr, ptr, size);
-	return (new_ptr);
+	i = 0;
+	while (str[i] != '\0' && str[i] != '\n')
+		i++;
+	return (i);
 }

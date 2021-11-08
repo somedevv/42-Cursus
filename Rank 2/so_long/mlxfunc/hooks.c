@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 23:06:04 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/07 20:36:42 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/08 09:04:01 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	key_hook(int keycode, void *var)
 		ft_freestr(img->map);
 		exit(0);
 	}
-	if (keycode == 13 ||  keycode == 126)
+	if (keycode == 13 || keycode == 126)
 		moveup(img);
 	if (keycode == 1 || keycode == 125)
 		movedown(img);

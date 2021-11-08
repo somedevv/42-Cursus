@@ -6,23 +6,23 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 23:30:07 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/07 20:20:52 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/08 10:28:09 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../solong.h"
 
-int	checklinelen(char **line, size_t xlen, size_t ylen)
+int	checklinelen(char **line)
 {
 	size_t	i;
 
 	i = -1;
-	while (++i < ylen - 2)
+	while (++i < m.y_size - 2)
 	{
-		if (ft_strlen(line[i]) - 2 != xlen)
+		if (ft_strnllen(line[i]) != m.x_size)
 			return (1);
 	}
-	if (ft_strlen(line[i]) - 1 != xlen)
+	if (ft_strnllen(line[i]) != m.x_size)
 		return (1);
 	return (0);
 }
