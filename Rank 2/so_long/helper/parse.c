@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 22:09:49 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/08 11:04:20 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/08 12:55:08 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ void	parseinput(const int argc, const char *argv)
 	char	*tmp;
 
 	if (argc > 2)
-		exit(printerror("Arg eror: Only one argument is valid\n"));
+		printerror("Arg eror: Only one argument is valid\n");
 	if (argc < 2)
-		exit(printerror("Arg error: Please provide a .ber map file\n"));
+		printerror("Arg error: Please provide a .ber map file\n");
 	tmp = ft_strnstr(ft_strrchr(argv, '.'), ".ber", 4);
 	if (tmp && ft_strlen(tmp) == 4)
 		return ;
 	else
-		exit(printerror("Arg error: Only .ber map file accepted\n"));
+		printerror("Arg error: Only .ber map file accepted\n");
 }
 
 char	**parsemap(int fd)
@@ -35,10 +35,14 @@ char	**parsemap(int fd)
 	int		len;
 
 	i = 1;
+	if (!fd || fd < 0 || fd > 256)
+		printerror("Map error: Map does not exist");
 	line = get_next_line(fd);
 	if (!line || line[0] != '1')
-		exit(1);
+		printerror("Map error: Invalid map");
 	len = ft_strnllen(line);
+	if (len < 3)
+		printerror("Map error: Invalid map");
 	map = ft_calloc(1, sizeof(char *) * len);
 	map[0] = line;
 	while (line)

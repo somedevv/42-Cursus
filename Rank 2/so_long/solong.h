@@ -30,8 +30,8 @@ struct s_map
 {
 	size_t	x_size;
 	size_t	y_size;
-	int	p_x;
-	int	p_y;
+	int		p_x;
+	int		p_y;
 }	m;
 
 /*
@@ -47,7 +47,7 @@ char	**parsemap(int fd);
 ** Helper functions
 */
 
-int		printerror(char *error);
+void		printerror(char *error);
 void	printmap(char **map);
 int		prgclose(int keycode, void *vars);
 size_t	getleny(char **str);
