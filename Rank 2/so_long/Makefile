@@ -11,7 +11,7 @@ SRCS =	main.c \
 		mlxfunc/hooks.c \
 		mlxfunc/draw.c \
 
-FLAGS = -Wall -Wextra -Werror -fsanitize=address
+FLAGS = -Wall -Wextra -Werror
 
 OBJS = $(SRCS:.c=.o)
 

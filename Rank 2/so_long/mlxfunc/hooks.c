@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 23:06:04 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/08 12:58:45 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/08 19:56:04 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ int	key_hook(int keycode, void *var)
 	if (keycode == 53)
 	{
 		mlx_destroy_window(img->mlx, img->win);
-		ft_freestr(img->map);
-		prgclose(0, (void*)0);
+		prgclose(0, (void *) 0);
 	}
 	if (keycode == 13 || keycode == 126)
 		moveup(img);

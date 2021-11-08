@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 03:10:16 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/08 09:21:08 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/08 19:51:15 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ static void	drawground(t_data *img, size_t i, size_t x, size_t y)
 			{
 				img->pos[0] = i;
 				img->pos[1] = j;
-				m.p_x = x;
-				m.p_y = y;
+				img->p_x = x;
+				img->p_y = y;
 			}
 			y += 32;
 		}

@@ -24,15 +24,11 @@ typedef struct s_data {
 	int		coin;
 	int		moves;
 	int		cocur;
-}				t_data;
-
-struct s_map
-{
 	size_t	x_size;
 	size_t	y_size;
 	int		p_x;
 	int		p_y;
-}	m;
+}				t_data;
 
 /*
 ** Main func
@@ -47,7 +43,7 @@ char	**parsemap(int fd);
 ** Helper functions
 */
 
-void		printerror(char *error);
+void	printerror(char *error);
 void	printmap(char **map);
 int		prgclose(int keycode, void *vars);
 size_t	getleny(char **str);
@@ -62,7 +58,7 @@ int		checklines(char **line);
 ** Checks functions
 */
 
-int		checklinelen();
+int		checklinelen(char **line, t_data img);
 int		checkbujero(t_data img, int i);
 void	checkcoin(t_data *img, int i);
 

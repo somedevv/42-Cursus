@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 22:09:49 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/08 12:55:08 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/08 20:04:02 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ void	parseinput(const int argc, const char *argv)
 	char	*tmp;
 
 	if (argc > 2)
-		printerror("Arg eror: Only one argument is valid\n");
+		printerror("Arg eror: Only one argument is valid");
 	if (argc < 2)
-		printerror("Arg error: Please provide a .ber map file\n");
+		printerror("Arg error: Please provide a .ber map file");
 	tmp = ft_strnstr(ft_strrchr(argv, '.'), ".ber", 4);
 	if (tmp && ft_strlen(tmp) == 4)
 		return ;
 	else
-		printerror("Arg error: Only .ber map file accepted\n");
+		printerror("Arg error: Only .ber map file accepted");
 }
 
 char	**parsemap(int fd)
