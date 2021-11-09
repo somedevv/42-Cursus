@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 01:48:37 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/09 16:31:18 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/09 17:23:07 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,13 @@ static void	checkgnl(int fd)
 	len = 0;
 	while (line)
 	{
+		free(line);
 		line = get_next_line(fd);
 		len++;
 	}
+	free(line);
 	if (len < 3)
 		printerror("Map error: Invalid map");
-}
-
-void	leaks()
-{
-	system("leaks so_long");
 }
 
 int	main(int argc, char **argv)
@@ -42,7 +39,6 @@ int	main(int argc, char **argv)
 	t_data	img;
 	int		fd;
 
-	atexit(leaks);
 	img.coin = 0;
 	img.cocur = 0;
 	img.moves = 0;

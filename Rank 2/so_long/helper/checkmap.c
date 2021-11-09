@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 18:11:55 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/08 19:50:51 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/09 16:43:39 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,8 @@ static void	checkmapcontent2(char **map, t_data *img)
 {
 	size_t	i;
 	size_t	j;
-	int		eocur;
-	int		pocur;
 
-	i = -1;
-	eocur = 0;
-	pocur = 0;
+	i = 0;
 	while (map[++i])
 	{
 		j = -1;
@@ -72,11 +68,6 @@ static void	checkmapcontent2(char **map, t_data *img)
 
 void	checkmapcontent(char **map, t_data *img)
 {
-	int	eocur;
-	int	pocur;
-
-	eocur = 0;
-	pocur = 0;
 	if (!map)
 		printerror("Map error: No map");
 	if (img->x_size == img->y_size)

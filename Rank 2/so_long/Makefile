@@ -23,7 +23,7 @@ CC = gcc
 	$(CC) $(FLAGS) -Imlx -c $< -o $@
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(SRCS) -Iincludes $(INCL) -Lmlx -lmlx -framework OpenGL -framework AppKit -lz -o $(NAME)
+	$(CC) $(FLAGS) $(SRCS) -Iincludes $(INCL) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 all: $(NAME)
 

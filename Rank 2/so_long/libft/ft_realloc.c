@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 06:23:18 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/08 09:05:36 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/09 17:35:30 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,15 @@ void	*ft_realloc(void *ptr, size_t size)
 	if (ptr == NULL)
 		return (malloc(size));
 	if (!size)
-		return (ptr);
+	{
+		if (ptr)
+			free(ptr);
+		return (NULL);
+	}
 	new_ptr = malloc(size);
+	if (!new_ptr)
+		return (NULL);
 	ft_memcpy(new_ptr, ptr, size);
+	free(ptr);
 	return (new_ptr);
 }
