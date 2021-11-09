@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 01:48:37 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/08 20:03:50 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/09 16:31:18 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,17 @@ static void	checkgnl(int fd)
 		printerror("Map error: Invalid map");
 }
 
-// void	leaks()
-// {
-// 	system("leaks so_long");
-// }
+void	leaks()
+{
+	system("leaks so_long");
+}
 
 int	main(int argc, char **argv)
 {
 	t_data	img;
 	int		fd;
 
-	// atexit(leaks);
+	atexit(leaks);
 	img.coin = 0;
 	img.cocur = 0;
 	img.moves = 0;
@@ -58,8 +58,8 @@ int	main(int argc, char **argv)
 	checkmapcontent(img.map, &img);
 	printmap(img.map);
 	img.mlx = mlx_init();
-	img.win = mlx_new_window(img.mlx, 32 * img.x_size,
-			32 * img.y_size, "Er so long mu largo");
+	img.win = mlx_new_window(img.mlx, 32 * img.x_size, 32 * img.y_size,
+			"Er so long mu largo");
 	draw(&img, 0);
 	mlx_key_hook(img.win, key_hook, &img);
 	mlx_hook(img.win, 17, 0L, prgclose, &img);

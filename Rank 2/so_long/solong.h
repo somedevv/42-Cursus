@@ -34,8 +34,6 @@ typedef struct s_data {
 ** Main func
 */
 
-size_t	ft_strlen2(const char *str);
-
 void	parseinput(const int argc, const char *argv);
 char	**parsemap(int fd);
 
