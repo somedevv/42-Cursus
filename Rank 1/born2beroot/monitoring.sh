@@ -23,4 +23,4 @@ echo "#User Log:" $(who | wc -l)
 #Net
 echo "#Networks:" $(hostname -I) $(ip a | grep link/ether | awk '{printf " (%s)\n", $2}')
 #Sudo commands
-echo "#Sudo commands:" $(grep COMMAND /var/log/sudo/sudo.log | wc -l)
+echo "#Sudo commands:" $(grep -a 'COMMAND' /var/log/sudo/sudo.log | wc -l)
