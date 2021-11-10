@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 18:11:55 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/10 01:54:32 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/10 21:44:02 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	checkelemnts(char **map, t_data *img)
 				eocur += 1;
 		}
 	}
-	if (!(eocur == 1 && pocur == 1 && img->cocur > 0))
+	if (!(eocur > 0 && pocur == 1 && img->cocur > 0))
 		printerror("Map error: Not enought players, escapes or coins\n");
 }
 
