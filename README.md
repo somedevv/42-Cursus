@@ -23,6 +23,7 @@ These are all my projects and exams grade in the 42-Cursus of [42Madrid Fundaci√
 |  ##  |			Name				|	Directory	| Files | Mark |
 |:----:|:-----------------------------------:|:------------------:|:--------------:|:--------------:|
 | 00 |push_swap | [push_swap/](https://github.com/somedevv/42-Cursus/tree/master/Rank%202/push_swap) | *.c, *.h, Makefile | [![agaliste's 42Project Score](https://badge42.herokuapp.com/api/project/agaliste/push_swap)](https://github.com/somedevv/42-Cursus/tree/master/Rank%202/push_swap) |
+| 01 |so_long | [so_long/](https://github.com/somedevv/42-Cursus/tree/master/Rank%202/so_long) | *.c, *.h, Makefile, Lmlx | [![agaliste's 42Project Score](https://badge42.herokuapp.com/api/project/agaliste/so_long)](https://github.com/somedevv/42-Cursus/tree/master/Rank%202/so_long) |
 
 ## [Rank 4](https://github.com/somedevv/42-Cursus/tree/master/Rank%204)
 
