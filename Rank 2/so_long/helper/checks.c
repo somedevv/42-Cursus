@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 23:30:07 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/08 19:49:45 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/10 01:53:07 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,11 @@ int	checklinelen(char **line, t_data img)
 	size_t	i;
 
 	i = -1;
-	while (++i < img.y_size - 2)
+	while (++i < img.y_size)
 	{
 		if (ft_strnllen(line[i]) != img.x_size)
 			return (1);
 	}
-	if (ft_strnllen(line[i]) != img.x_size)
-		return (1);
 	return (0);
 }
 

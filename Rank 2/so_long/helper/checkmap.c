@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 18:11:55 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/09 16:43:39 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/10 01:54:32 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void	checkmapcontent2(char **map, t_data *img)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
+	i = -1;
 	while (map[++i])
 	{
 		j = -1;
