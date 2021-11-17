@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 01:48:37 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/10 03:06:09 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/17 22:56:10 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,5 @@ int	main(int argc, char **argv)
 			"Er so long mu largo");
 	draw(&img, 0);
 	startmlx(img);
+	return (0);
 }

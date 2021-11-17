@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 00:32:33 by agaliste          #+#    #+#             */
-/*   Updated: 2021/11/17 21:13:16 by agaliste         ###   ########.fr       */
+/*   Updated: 2021/11/17 22:55:40 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	child(char **argv, char **env, int *fd)
 	int		fdin;
 
 	close(fd[0]);
-	fdin = open(argv[1], O_RDONLY, 777);
+	fdin = open(argv[1], O_RDONLY, 0777);
 	if (fdin == -1)
 		exiterror("Infile Error");
 	dup2(fdin, STDIN_FILENO);
@@ -47,7 +47,7 @@ static void	daddy(char **argv, char **env, int *fd)
 	int		fdout;
 
 	close(fd[1]);
-	fdout = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 777);
+	fdout = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (fdout == -1)
 		exiterror("Outfile Error");
 	dup2(fd[0], STDIN_FILENO);
@@ -83,5 +83,5 @@ int	main(int argc, char **argv, char **env)
 		}
 	}
 	waitpid(pid, NULL, 0);
-	exit(EXIT_SUCCESS);
+	return (0);
 }
