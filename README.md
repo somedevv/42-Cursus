@@ -8,25 +8,26 @@ These are all my projects and exams grade in the 42-Cursus of [42Madrid Fundaci√
 
 |  ##  |			Name				|	Directory	| Files | Mark |
 |:----:|:-----------------------------------:|:------------------:|:--------------:|:--------------:|
-|  00  |libft								|	[libft/](https://github.com/somedevv/42-Cursus/tree/master/Rank%200/libft)		| *.c, libft.h, Makefile | [![agaliste's 42Project Score](https://badge42.herokuapp.com/api/project/agaliste/Libft)](https://github.com/somedevv/42-Cursus/tree/master/Rank%200/libft) |
+|  01  |libft								|	[libft/](https://github.com/somedevv/42-Cursus/tree/master/Rank%200/libft)		| *.c, libft.h, Makefile | [![agaliste's 42Project Score](https://badge42.herokuapp.com/api/project/agaliste/Libft)](https://github.com/somedevv/42-Cursus/tree/master/Rank%200/libft) |
 
 ## [Rank 1](https://github.com/somedevv/42-Cursus/tree/master/Rank%201)
 
 |  ##  |			Name				|	Directory	| Files | Mark |
 |:----:|:-----------------------------------:|:------------------:|:--------------:|:--------------:|
-|  00  |get_next_line								|	[get_next_line/](https://github.com/somedevv/42-Cursus/tree/master/Rank%201/get_next_line)		| get_next_line.c, get_next_line_utils.c, get_next_line.h | [![agaliste's 42Project Score](https://badge42.herokuapp.com/api/project/agaliste/get_next_line)](https://github.com/somedevv/42-Cursus/tree/master/Rank%201/get_next_line) |
-|  01  |printf								|	[ft_printf/](https://github.com/somedevv/42-Cursus/tree/master/Rank%201/ft_printf)		| *.c, *.h, Makefile | [![agaliste's 42Project Score](https://badge42.herokuapp.com/api/project/agaliste/ft_printf)](https://github.com/somedevv/42-Cursus/tree/master/Rank%201/ft_printf) |
-|  02  |born2beroot								|	[born2beroot/](https://github.com/somedevv/42-Cursus/tree/master/Rank%201/born2beroot/)		| signature.txt | [![agaliste's 42Project Score](https://badge42.herokuapp.com/api/project/agaliste/Born2beroot)](https://github.com/somedevv/42-Cursus/tree/master/Rank%201/born2beroot/) |
+|  01  |get_next_line								|	[get_next_line/](https://github.com/somedevv/42-Cursus/tree/master/Rank%201/get_next_line)		| get_next_line.c, get_next_line_utils.c, get_next_line.h | [![agaliste's 42Project Score](https://badge42.herokuapp.com/api/project/agaliste/get_next_line)](https://github.com/somedevv/42-Cursus/tree/master/Rank%201/get_next_line) |
+|  02  |printf								|	[ft_printf/](https://github.com/somedevv/42-Cursus/tree/master/Rank%201/ft_printf)		| *.c, *.h, Makefile | [![agaliste's 42Project Score](https://badge42.herokuapp.com/api/project/agaliste/ft_printf)](https://github.com/somedevv/42-Cursus/tree/master/Rank%201/ft_printf) |
+|  03  |born2beroot								|	[born2beroot/](https://github.com/somedevv/42-Cursus/tree/master/Rank%201/born2beroot/)		| signature.txt | [![agaliste's 42Project Score](https://badge42.herokuapp.com/api/project/agaliste/Born2beroot)](https://github.com/somedevv/42-Cursus/tree/master/Rank%201/born2beroot/) |
 
 ## [Rank 2](https://github.com/somedevv/42-Cursus/tree/master/Rank%202)
 
 |  ##  |			Name				|	Directory	| Files | Mark |
 |:----:|:-----------------------------------:|:------------------:|:--------------:|:--------------:|
-| 00 |push_swap | [push_swap/](https://github.com/somedevv/42-Cursus/tree/master/Rank%202/push_swap) | *.c, *.h, Makefile | [![agaliste's 42Project Score](https://badge42.herokuapp.com/api/project/agaliste/push_swap)](https://github.com/somedevv/42-Cursus/tree/master/Rank%202/push_swap) |
-| 01 |so_long | [so_long/](https://github.com/somedevv/42-Cursus/tree/master/Rank%202/so_long) | *.c, *.h, Makefile, Lmlx | [![agaliste's 42Project Score](https://badge42.herokuapp.com/api/project/agaliste/so_long)](https://github.com/somedevv/42-Cursus/tree/master/Rank%202/so_long) |
+| 01 |push_swap | [push_swap/](https://github.com/somedevv/42-Cursus/tree/master/Rank%202/push_swap) | *.c, *.h, Makefile | [![agaliste's 42Project Score](https://badge42.herokuapp.com/api/project/agaliste/push_swap)](https://github.com/somedevv/42-Cursus/tree/master/Rank%202/push_swap) |
+| 02 |so_long | [so_long/](https://github.com/somedevv/42-Cursus/tree/master/Rank%202/so_long) | *.c, *.h, Makefile, Lmlx | [![agaliste's 42Project Score](https://badge42.herokuapp.com/api/project/agaliste/so_long)](https://github.com/somedevv/42-Cursus/tree/master/Rank%202/so_long) |
+| 03 |Pipex | [Pipex/](https://github.com/somedevv/42-Cursus/tree/master/Rank%202/Pipex) | *.c, *.h, Makefile | [![agaliste's 42Project Score](https://badge42.herokuapp.com/api/project/agaliste/pipex)](https://github.com/somedevv/42-Cursus/tree/master/Rank%202/Pipex) |
 
 ## [Rank 4](https://github.com/somedevv/42-Cursus/tree/master/Rank%204)
 
 |  ##  |			Name				|	Directory	| Files | Mark |
 |:----:|:-----------------------------------:|:------------------:|:--------------:|:--------------:|
-|  00  |Module 00								|	[Module 00/](https://github.com/somedevv/42-Cursus/tree/master/Rank%204/Module_00)		| [ex00/](https://github.com/somedevv/42-Cursus/tree/master/Rank%204/Module_00/ex00) [ex01/](https://github.com/somedevv/42-Cursus/tree/master/Rank%204/Module_00/ex01) ex02/ | Not Subscribed Yet |
+|  01  |Module 00								|	[Module 00/](https://github.com/somedevv/42-Cursus/tree/master/Rank%204/Module_00)		| [ex00/](https://github.com/somedevv/42-Cursus/tree/master/Rank%204/Module_00/ex00) [ex01/](https://github.com/somedevv/42-Cursus/tree/master/Rank%204/Module_00/ex01) ex02/ | Not Subscribed Yet |
